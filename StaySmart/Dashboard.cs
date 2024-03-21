@@ -16,5 +16,18 @@ namespace StaySmart
         {
             InitializeComponent();
         }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+            uC_reservations1.Visible = true;
+            uC_reservations1.BringToFront();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            uC_reservations1.Visible = false;
+            btnAddPlaceNav.PerformClick();
+
+        }
     }
 }
