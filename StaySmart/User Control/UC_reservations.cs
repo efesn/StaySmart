@@ -32,21 +32,21 @@ namespace StaySmart.User_Control
 
         private void UC_reservations_Load(object sender, EventArgs e)
         {
-            query = "SELECT * FROM Add_Reservation";
+            query = "SELECT * FROM Add_Place";
             DataSet ds = fn.getData(query);
             DataGridView1.DataSource = ds.Tables[0];
         }
 
         private void btnAddPlace_Click(object sender, EventArgs e)
         {
-            // place formlarını required field olarak ayarlıyoruz
+            // place formlarını required field olarak ayarlıyoruzç
             if (placeName.Text != "" && placeAddress.Text != "" && placeContact.Text != "")
             {
                 String name = placeName.Text;
                 String address = placeAddress.Text;
                 String contact = placeContact.Text;
 
-                query = "INSERT INTO Add_Reservation (reservationName, reservationAddress, reservationContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
+                query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
                 fn.setData(query, "Reservation Place Added Successfully");
 
                 UC_reservations_Load(this, null); //data ekledikten sonra datasette görünmesini sağlıyoruz

@@ -29,30 +29,35 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             btnAddPlaceNav = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnDashboard = new Guna.UI2.WinForms.Guna2Button();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            btnMyProfile = new Guna.UI2.WinForms.Guna2Button();
+            btnViewReservations = new Guna.UI2.WinForms.Guna2Button();
+            btnCreateReservation = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
+            uC_ViewReservations1 = new User_Control.UC_ViewReservations();
+            uC_CreateReservation1 = new User_Control.UC_CreateReservation();
             uC_reservations1 = new User_Control.UC_reservations();
             label2 = new Label();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -61,12 +66,12 @@
             // 
             panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(btnAddPlaceNav);
-            panel1.Controls.Add(guna2Button1);
+            panel1.Controls.Add(btnDashboard);
             panel1.Controls.Add(guna2Button5);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(guna2Button4);
-            panel1.Controls.Add(guna2Button3);
-            panel1.Controls.Add(guna2Button2);
+            panel1.Controls.Add(btnMyProfile);
+            panel1.Controls.Add(btnViewReservations);
+            panel1.Controls.Add(btnCreateReservation);
             panel1.Location = new Point(0, -2);
             panel1.Name = "panel1";
             panel1.Size = new Size(259, 674);
@@ -78,7 +83,7 @@
             btnAddPlaceNav.BorderRadius = 15;
             btnAddPlaceNav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             btnAddPlaceNav.CheckedState.FillColor = Color.Blue;
-            btnAddPlaceNav.CustomizableEdges = customizableEdges13;
+            btnAddPlaceNav.CustomizableEdges = customizableEdges1;
             btnAddPlaceNav.DisabledState.BorderColor = Color.DarkGray;
             btnAddPlaceNav.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAddPlaceNav.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -88,32 +93,32 @@
             btnAddPlaceNav.ForeColor = Color.White;
             btnAddPlaceNav.Location = new Point(31, 244);
             btnAddPlaceNav.Name = "btnAddPlaceNav";
-            btnAddPlaceNav.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnAddPlaceNav.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnAddPlaceNav.Size = new Size(193, 48);
             btnAddPlaceNav.TabIndex = 7;
             btnAddPlaceNav.Text = "Add Place";
             btnAddPlaceNav.Click += guna2Button6_Click;
             // 
-            // guna2Button1
+            // btnDashboard
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button1.CheckedState.FillColor = Color.Blue;
-            guna2Button1.CustomizableEdges = customizableEdges15;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Navy;
-            guna2Button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(31, 155);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2Button1.Size = new Size(193, 48);
-            guna2Button1.TabIndex = 6;
-            guna2Button1.Text = "Dashboard";
+            btnDashboard.BackColor = Color.Transparent;
+            btnDashboard.BorderRadius = 15;
+            btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnDashboard.CheckedState.FillColor = Color.Blue;
+            btnDashboard.CustomizableEdges = customizableEdges3;
+            btnDashboard.DisabledState.BorderColor = Color.DarkGray;
+            btnDashboard.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDashboard.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDashboard.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDashboard.FillColor = Color.Navy;
+            btnDashboard.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Location = new Point(31, 155);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnDashboard.Size = new Size(193, 48);
+            btnDashboard.TabIndex = 6;
+            btnDashboard.Text = "Dashboard";
             // 
             // guna2Button5
             // 
@@ -121,7 +126,7 @@
             guna2Button5.BorderRadius = 15;
             guna2Button5.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             guna2Button5.CheckedState.FillColor = Color.Blue;
-            guna2Button5.CustomizableEdges = customizableEdges17;
+            guna2Button5.CustomizableEdges = customizableEdges5;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -129,9 +134,9 @@
             guna2Button5.FillColor = Color.IndianRed;
             guna2Button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             guna2Button5.ForeColor = Color.White;
-            guna2Button5.Location = new Point(69, 612);
+            guna2Button5.Location = new Point(71, 612);
             guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button5.Size = new Size(112, 48);
             guna2Button5.TabIndex = 5;
             guna2Button5.Text = "Logout";
@@ -146,77 +151,96 @@
             label1.TabIndex = 4;
             label1.Text = "StaySmart";
             // 
-            // guna2Button4
+            // btnMyProfile
             // 
-            guna2Button4.BackColor = Color.Transparent;
-            guna2Button4.BorderRadius = 15;
-            guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button4.CheckedState.FillColor = Color.Blue;
-            guna2Button4.CustomizableEdges = customizableEdges19;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.Navy;
-            guna2Button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(31, 495);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2Button4.Size = new Size(193, 48);
-            guna2Button4.TabIndex = 3;
-            guna2Button4.Text = "My Profile";
+            btnMyProfile.BackColor = Color.Transparent;
+            btnMyProfile.BorderRadius = 15;
+            btnMyProfile.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnMyProfile.CheckedState.FillColor = Color.Blue;
+            btnMyProfile.CustomizableEdges = customizableEdges7;
+            btnMyProfile.DisabledState.BorderColor = Color.DarkGray;
+            btnMyProfile.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnMyProfile.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnMyProfile.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnMyProfile.FillColor = Color.Navy;
+            btnMyProfile.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnMyProfile.ForeColor = Color.White;
+            btnMyProfile.Location = new Point(31, 495);
+            btnMyProfile.Name = "btnMyProfile";
+            btnMyProfile.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnMyProfile.Size = new Size(193, 48);
+            btnMyProfile.TabIndex = 3;
+            btnMyProfile.Text = "My Profile";
             // 
-            // guna2Button3
+            // btnViewReservations
             // 
-            guna2Button3.BackColor = Color.Transparent;
-            guna2Button3.BorderRadius = 15;
-            guna2Button3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button3.CheckedState.FillColor = Color.Blue;
-            guna2Button3.CustomizableEdges = customizableEdges21;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.Navy;
-            guna2Button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(31, 412);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Button3.Size = new Size(193, 48);
-            guna2Button3.TabIndex = 2;
-            guna2Button3.Text = "View Reservations";
+            btnViewReservations.BackColor = Color.Transparent;
+            btnViewReservations.BorderRadius = 15;
+            btnViewReservations.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnViewReservations.CheckedState.FillColor = Color.Blue;
+            btnViewReservations.CustomizableEdges = customizableEdges9;
+            btnViewReservations.DisabledState.BorderColor = Color.DarkGray;
+            btnViewReservations.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnViewReservations.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnViewReservations.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnViewReservations.FillColor = Color.Navy;
+            btnViewReservations.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnViewReservations.ForeColor = Color.White;
+            btnViewReservations.Location = new Point(31, 412);
+            btnViewReservations.Name = "btnViewReservations";
+            btnViewReservations.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnViewReservations.Size = new Size(193, 48);
+            btnViewReservations.TabIndex = 2;
+            btnViewReservations.Text = "View Reservations";
+            btnViewReservations.Click += btnViewReservations_Click;
             // 
-            // guna2Button2
+            // btnCreateReservation
             // 
-            guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.BorderRadius = 15;
-            guna2Button2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            guna2Button2.CheckedState.FillColor = Color.Blue;
-            guna2Button2.CustomizableEdges = customizableEdges23;
-            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.Navy;
-            guna2Button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            guna2Button2.ForeColor = Color.White;
-            guna2Button2.Location = new Point(31, 330);
-            guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Button2.Size = new Size(193, 48);
-            guna2Button2.TabIndex = 1;
-            guna2Button2.Text = "Create Reservation";
+            btnCreateReservation.BackColor = Color.Transparent;
+            btnCreateReservation.BorderRadius = 15;
+            btnCreateReservation.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            btnCreateReservation.CheckedState.FillColor = Color.Blue;
+            btnCreateReservation.CustomizableEdges = customizableEdges11;
+            btnCreateReservation.DisabledState.BorderColor = Color.DarkGray;
+            btnCreateReservation.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCreateReservation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCreateReservation.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCreateReservation.FillColor = Color.Navy;
+            btnCreateReservation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnCreateReservation.ForeColor = Color.White;
+            btnCreateReservation.Location = new Point(31, 330);
+            btnCreateReservation.Name = "btnCreateReservation";
+            btnCreateReservation.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnCreateReservation.Size = new Size(193, 48);
+            btnCreateReservation.TabIndex = 1;
+            btnCreateReservation.Text = "Create Reservation";
+            btnCreateReservation.Click += btnCreateReservation_Click;
             // 
             // panel2
             // 
+            panel2.Controls.Add(uC_ViewReservations1);
+            panel2.Controls.Add(uC_CreateReservation1);
             panel2.Controls.Add(uC_reservations1);
             panel2.Controls.Add(label2);
             panel2.Location = new Point(265, 29);
             panel2.Name = "panel2";
             panel2.Size = new Size(1034, 629);
             panel2.TabIndex = 1;
+            // 
+            // uC_ViewReservations1
+            // 
+            uC_ViewReservations1.Location = new Point(33, 78);
+            uC_ViewReservations1.Name = "uC_ViewReservations1";
+            uC_ViewReservations1.Size = new Size(961, 551);
+            uC_ViewReservations1.TabIndex = 8;
+            // 
+            // uC_CreateReservation1
+            // 
+            uC_CreateReservation1.BackColor = Color.White;
+            uC_CreateReservation1.Location = new Point(33, 78);
+            uC_CreateReservation1.Name = "uC_CreateReservation1";
+            uC_CreateReservation1.Size = new Size(961, 551);
+            uC_CreateReservation1.TabIndex = 7;
             // 
             // uC_reservations1
             // 
@@ -244,6 +268,19 @@
             guna2Elipse1.BorderRadius = 30;
             guna2Elipse1.TargetControl = panel2;
             // 
+            // guna2Elipse2
+            // 
+            guna2Elipse2.BorderRadius = 30;
+            guna2Elipse2.TargetControl = panel2;
+            // 
+            // guna2Elipse3
+            // 
+            guna2Elipse3.BorderRadius = 30;
+            // 
+            // guna2Elipse4
+            // 
+            guna2Elipse4.BorderRadius = 30;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -267,15 +304,20 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnCreateReservation;
+        private Guna.UI2.WinForms.Guna2Button btnMyProfile;
+        private Guna.UI2.WinForms.Guna2Button btnViewReservations;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnDashboard;
         private Label label2;
         private Guna.UI2.WinForms.Guna2Button btnAddPlaceNav;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private User_Control.UC_reservations uC_reservations1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private User_Control.UC_CreateReservation uC_CreateReservation1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
+        private User_Control.UC_ViewReservations uC_ViewReservations1;
     }
 }

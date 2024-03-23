@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace StaySmart
 {
-    internal class DbFunction
+    internal class ViewReservationsFunction
     {
         protected SqlConnection getConnection() // mssql server ile haberleşiyoruz
         {
@@ -40,17 +40,6 @@ namespace StaySmart
             con.Close();
 
             MessageBox.Show("'" + message + "'", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information); // işlem başarılıysa mesaj gösteriyoruz
-        }
-
-        public SqlDataReader getForCombo(String query) // combobox için data çekiyoruz
-        {
-            SqlConnection con = getConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            con.Open();
-            cmd = new SqlCommand(query, con);
-            SqlDataReader sdr = cmd.ExecuteReader();
-            return sdr;
         }
     }
 }
