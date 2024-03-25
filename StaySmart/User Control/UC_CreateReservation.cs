@@ -45,7 +45,7 @@ namespace StaySmart.User_Control
 
         private void btnNewReservation_Click(object sender, EventArgs e)
         {
-            if(comboBoxPlaceName.SelectedIndex != -1 && txtName.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && genderCombobox.Text !="" && txtCheckin.Text != "")
+            if (comboBoxPlaceName.SelectedIndex != -1 && txtName.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && genderCombobox.Text != "" && txtCheckin.Text != "")
             {
                 string placeName = comboBoxPlaceName.SelectedItem.ToString();
                 string customerName = txtName.Text;
@@ -59,7 +59,7 @@ namespace StaySmart.User_Control
                 query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "')";
                 fn.setData(query, "Reservation Created Successfully");
 
-                
+
             }
             else
             {

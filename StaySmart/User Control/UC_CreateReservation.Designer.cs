@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             label1 = new Label();
             label5 = new Label();
@@ -56,7 +56,7 @@
             txtContact = new Guna.UI2.WinForms.Guna2TextBox();
             label6 = new Label();
             comboBoxPlaceName = new Guna.UI2.WinForms.Guna2ComboBox();
-            btnNewResevation = new Guna.UI2.WinForms.Guna2Button();
+            btnNewReservation = new Guna.UI2.WinForms.Guna2Button();
             label7 = new Label();
             txtCheckin = new Label();
             btnCheckin = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -123,7 +123,7 @@
             // txtName
             // 
             txtName.BorderColor = Color.Black;
-            txtName.CustomizableEdges = customizableEdges15;
+            txtName.CustomizableEdges = customizableEdges17;
             txtName.DefaultText = "";
             txtName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -137,14 +137,14 @@
             txtName.PasswordChar = '\0';
             txtName.PlaceholderText = "Enter Full Name";
             txtName.SelectedText = "";
-            txtName.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            txtName.ShadowDecoration.CustomizableEdges = customizableEdges18;
             txtName.Size = new Size(200, 36);
             txtName.TabIndex = 14;
             // 
             // txtEmail
             // 
             txtEmail.BorderColor = Color.Black;
-            txtEmail.CustomizableEdges = customizableEdges13;
+            txtEmail.CustomizableEdges = customizableEdges19;
             txtEmail.DefaultText = "";
             txtEmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtEmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -158,14 +158,14 @@
             txtEmail.PasswordChar = '\0';
             txtEmail.PlaceholderText = "";
             txtEmail.SelectedText = "";
-            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtEmail.ShadowDecoration.CustomizableEdges = customizableEdges20;
             txtEmail.Size = new Size(200, 36);
             txtEmail.TabIndex = 15;
             // 
             // txtContact
             // 
             txtContact.BorderColor = Color.Black;
-            txtContact.CustomizableEdges = customizableEdges11;
+            txtContact.CustomizableEdges = customizableEdges21;
             txtContact.DefaultText = "";
             txtContact.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtContact.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -179,7 +179,7 @@
             txtContact.PasswordChar = '\0';
             txtContact.PlaceholderText = "";
             txtContact.SelectedText = "";
-            txtContact.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtContact.ShadowDecoration.CustomizableEdges = customizableEdges22;
             txtContact.Size = new Size(200, 36);
             txtContact.TabIndex = 16;
             // 
@@ -196,7 +196,7 @@
             // comboBoxPlaceName
             // 
             comboBoxPlaceName.BackColor = Color.Transparent;
-            comboBoxPlaceName.CustomizableEdges = customizableEdges9;
+            comboBoxPlaceName.CustomizableEdges = customizableEdges23;
             comboBoxPlaceName.DrawMode = DrawMode.OwnerDrawFixed;
             comboBoxPlaceName.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxPlaceName.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -206,29 +206,29 @@
             comboBoxPlaceName.ItemHeight = 30;
             comboBoxPlaceName.Location = new Point(336, 272);
             comboBoxPlaceName.Name = "comboBoxPlaceName";
-            comboBoxPlaceName.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            comboBoxPlaceName.ShadowDecoration.CustomizableEdges = customizableEdges24;
             comboBoxPlaceName.Size = new Size(200, 36);
             comboBoxPlaceName.TabIndex = 18;
             comboBoxPlaceName.SelectedIndexChanged += comboBoxPlaceName_SelectedIndexChanged;
             // 
-            // btnNewResevation
+            // btnNewReservation
             // 
-            btnNewResevation.BorderRadius = 25;
-            btnNewResevation.CustomizableEdges = customizableEdges7;
-            btnNewResevation.DisabledState.BorderColor = Color.DarkGray;
-            btnNewResevation.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnNewResevation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnNewResevation.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnNewResevation.FillColor = Color.Navy;
-            btnNewResevation.Font = new Font("Segoe UI", 12F);
-            btnNewResevation.ForeColor = Color.White;
-            btnNewResevation.Location = new Point(336, 475);
-            btnNewResevation.Name = "btnNewResevation";
-            btnNewResevation.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnNewResevation.Size = new Size(200, 50);
-            btnNewResevation.TabIndex = 19;
-            btnNewResevation.Text = "Add New Reservation";
-            btnNewResevation.Click += btnNewReservation_Click;
+            btnNewReservation.BorderRadius = 25;
+            btnNewReservation.CustomizableEdges = customizableEdges25;
+            btnNewReservation.DisabledState.BorderColor = Color.DarkGray;
+            btnNewReservation.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnNewReservation.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnNewReservation.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnNewReservation.FillColor = Color.Navy;
+            btnNewReservation.Font = new Font("Segoe UI", 12F);
+            btnNewReservation.ForeColor = Color.White;
+            btnNewReservation.Location = new Point(336, 475);
+            btnNewReservation.Name = "btnNewReservation";
+            btnNewReservation.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnNewReservation.Size = new Size(200, 50);
+            btnNewReservation.TabIndex = 19;
+            btnNewReservation.Text = "Add New Reservation";
+            btnNewReservation.Click += btnNewReservation_Click;
             // 
             // label7
             // 
@@ -253,7 +253,7 @@
             // btnCheckin
             // 
             btnCheckin.Checked = true;
-            btnCheckin.CustomizableEdges = customizableEdges5;
+            btnCheckin.CustomizableEdges = customizableEdges27;
             btnCheckin.FillColor = Color.White;
             btnCheckin.Font = new Font("Segoe UI", 9F);
             btnCheckin.Format = DateTimePickerFormat.Long;
@@ -261,7 +261,7 @@
             btnCheckin.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             btnCheckin.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             btnCheckin.Name = "btnCheckin";
-            btnCheckin.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCheckin.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnCheckin.Size = new Size(200, 36);
             btnCheckin.TabIndex = 23;
             btnCheckin.Value = new DateTime(2024, 3, 22, 18, 44, 28, 760);
@@ -269,7 +269,7 @@
             // btnCheckOut
             // 
             btnCheckOut.Checked = true;
-            btnCheckOut.CustomizableEdges = customizableEdges3;
+            btnCheckOut.CustomizableEdges = customizableEdges29;
             btnCheckOut.FillColor = Color.White;
             btnCheckOut.Font = new Font("Segoe UI", 9F);
             btnCheckOut.Format = DateTimePickerFormat.Long;
@@ -277,7 +277,7 @@
             btnCheckOut.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             btnCheckOut.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             btnCheckOut.Name = "btnCheckOut";
-            btnCheckOut.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnCheckOut.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnCheckOut.Size = new Size(200, 36);
             btnCheckOut.TabIndex = 25;
             btnCheckOut.Value = new DateTime(2024, 3, 22, 18, 44, 28, 760);
@@ -295,7 +295,7 @@
             // genderCombobox
             // 
             genderCombobox.BackColor = Color.Transparent;
-            genderCombobox.CustomizableEdges = customizableEdges1;
+            genderCombobox.CustomizableEdges = customizableEdges31;
             genderCombobox.DrawMode = DrawMode.OwnerDrawFixed;
             genderCombobox.DropDownStyle = ComboBoxStyle.DropDownList;
             genderCombobox.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -306,7 +306,7 @@
             genderCombobox.Items.AddRange(new object[] { "Male", "Female" });
             genderCombobox.Location = new Point(336, 179);
             genderCombobox.Name = "genderCombobox";
-            genderCombobox.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            genderCombobox.ShadowDecoration.CustomizableEdges = customizableEdges32;
             genderCombobox.Size = new Size(200, 36);
             genderCombobox.TabIndex = 26;
             // 
@@ -321,7 +321,7 @@
             Controls.Add(btnCheckin);
             Controls.Add(txtCheckin);
             Controls.Add(label7);
-            Controls.Add(btnNewResevation);
+            Controls.Add(btnNewReservation);
             Controls.Add(comboBoxPlaceName);
             Controls.Add(label6);
             Controls.Add(txtContact);
@@ -351,7 +351,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtName;
         private Label label6;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxPlaceName;
-        private Guna.UI2.WinForms.Guna2Button btnNewResevation;
+        private Guna.UI2.WinForms.Guna2Button btnNewReservation;
         private Label label7;
         private Guna.UI2.WinForms.Guna2DateTimePicker btnCheckOut;
         private Label label8;

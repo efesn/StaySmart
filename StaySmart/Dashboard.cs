@@ -43,5 +43,18 @@ namespace StaySmart
             uC_ViewReservations1.Visible = true;
             uC_ViewReservations1.BringToFront();
         }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(DialogResult.Yes == result)
+            {
+                this.Close();
+
+                Form1 login = new Form1();
+                login.Show();
+            }
+        }
     }
 }

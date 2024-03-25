@@ -140,6 +140,7 @@
             guna2Button5.Size = new Size(112, 48);
             guna2Button5.TabIndex = 5;
             guna2Button5.Text = "Logout";
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // label1
             // 

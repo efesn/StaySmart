@@ -1,26 +1,35 @@
+using System.Data.Common;
+
 namespace StaySmart
 {
     public partial class Form1 : Form
     {
+
+        DbFunction db = new DbFunction();
         public Form1()
         {
             InitializeComponent();
             textBox2.UseSystemPasswordChar = true;
+            db = new DbFunction();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "efesn" && textBox2.Text == "1234")
-            {
-                MessageBox.Show("Login Successful!, Redirecting to the Dashboard");
-                Dashboard ds = new Dashboard();
-                this.Hide();
-                ds.Show();
-            }
+            bool check = db.IsValidNamePass(textBox1.Text.Trim(), textBox2.Text.Trim());
+            if (textBox1.Text.Trim() == string.Empty || textBox2.Text.Trim() == string.Empty)
+                MessageBox.Show("Please fill all the fields", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                MessageBox.Show("Invalid Username or Password");
-                textBox2.Clear();
+                if (check)
+                {
+                    MessageBox.Show("Login Successful!, Redirecting to the Dashboard");
+                    Dashboard ds = new Dashboard();
+                    ds.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

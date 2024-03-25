@@ -52,5 +52,19 @@ namespace StaySmart
             SqlDataReader sdr = cmd.ExecuteReader();
             return sdr;
         }
+
+        public bool IsValidNamePass(string username, string password)
+        {
+            SqlConnection con = getConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            con.Open();
+            cmd.CommandText = "SELECT COUNT(*) FROM User_Table WHERE User_Name = @Username AND User_Password = @Password";
+            cmd.Parameters.AddWithValue("@Username", username);
+            cmd.Parameters.AddWithValue("@Password", password);
+            int count = (int)cmd.ExecuteScalar();
+            con.Close();
+            return count > 0;
+        }
     }
 }

@@ -15,6 +15,9 @@ namespace StaySmart.User_Control
     {
         DbFunction fn = new DbFunction();
         String query;
+
+        public static DataTable DataSource { get; internal set; }
+
         public UC_reservations()
         {
             InitializeComponent();
