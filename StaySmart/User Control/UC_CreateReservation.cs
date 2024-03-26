@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace StaySmart.User_Control
@@ -14,7 +7,7 @@ namespace StaySmart.User_Control
     public partial class UC_CreateReservation : UserControl
     {
         DbFunction fn = new DbFunction();
-        string query = "SELECT placeName FROM Add_Place";
+        string query;
 
         public UC_CreateReservation()
         {
@@ -24,21 +17,17 @@ namespace StaySmart.User_Control
 
         private void LoadPlaces()
         {
+            query = "SELECT placeName FROM Add_Place";
             SqlDataReader sdr = fn.getForCombo(query);
             while (sdr.Read())
             {
-                //yeni eklenen placeler güncellenmiyor burasıyla alakalı olabilir
-                for (int i = 0; i < sdr.FieldCount; i++)
-                {
-                    comboBoxPlaceName.Items.Add(sdr.GetString(i));
-                }
+                comboBoxPlaceName.Items.Add(sdr.GetString(0));
             }
             sdr.Close();
         }
 
         private void comboBoxPlaceName_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             string selectedPlaceName = comboBoxPlaceName.SelectedItem.ToString();
             MessageBox.Show("Selected Place: " + selectedPlaceName);
         }
@@ -50,7 +39,7 @@ namespace StaySmart.User_Control
                 string placeName = comboBoxPlaceName.SelectedItem.ToString();
                 string customerName = txtName.Text;
                 string customerContact = txtContact.Text;
-                string customerGender = "";
+                string customerGender = genderCombobox.Text;
                 string customerEmail = txtEmail.Text;
                 string gender = genderCombobox.Text;
                 string checkIn = btnCheckin.Text;
@@ -59,7 +48,7 @@ namespace StaySmart.User_Control
                 query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "')";
                 fn.setData(query, "Reservation Created Successfully");
 
-
+                
             }
             else
             {
@@ -81,6 +70,11 @@ namespace StaySmart.User_Control
         private void UC_CreateReservation_Leave(object sender, EventArgs e)
         {
             clearAll();
+        }
+
+        private void UC_CreateReservation_Load(object sender, EventArgs e)
+        {
+            LoadPlaces();
         }
     }
 }

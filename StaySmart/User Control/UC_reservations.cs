@@ -38,6 +38,11 @@ namespace StaySmart.User_Control
             query = "SELECT * FROM Add_Place";
             DataSet ds = fn.getData(query);
             DataGridView1.DataSource = ds.Tables[0];
+
+            DataGridView1.Columns[0].HeaderText = "ID";
+            DataGridView1.Columns[1].HeaderText = "Place Name";
+            DataGridView1.Columns[2].HeaderText = "Place Address";
+            DataGridView1.Columns[3].HeaderText = "Place Contact";
         }
 
         private void btnAddPlace_Click(object sender, EventArgs e)

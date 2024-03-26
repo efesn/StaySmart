@@ -11,6 +11,8 @@ namespace StaySmart
             InitializeComponent();
             textBox2.UseSystemPasswordChar = true;
             db = new DbFunction();
+
+            this.AcceptButton = button1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -25,6 +27,7 @@ namespace StaySmart
                     MessageBox.Show("Login Successful!, Redirecting to the Dashboard");
                     Dashboard ds = new Dashboard();
                     ds.Show();
+                    this.Hide();
                 }
                 else
                 {
