@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace StaySmart.User_Control
 {
@@ -17,14 +18,15 @@ namespace StaySmart.User_Control
 
         DbFunction fn = new DbFunction();
         String query;
+        Email email;
         public UC_ViewReservations()
         {
             InitializeComponent();
+            email = new Email("smtp.gmail.com", 587, "", "");
         }
 
         private void UC_ViewReservations_Load(object sender, EventArgs e)
         {
-
             comboBoxPlace.Items.Clear();
 
             query = "SELECT placeName FROM Add_Place";
@@ -35,12 +37,9 @@ namespace StaySmart.User_Control
             }
             sdr.Close();
 
+            LoadReservationsData(); // Load reservations data
 
-            query = "SELECT * FROM New_Reservation";
-            DataSet ds = fn.getData(query);
-            DataGridViewReservations.DataSource = ds.Tables[0];
-
-
+            // Set DataGridView columns headers
             DataGridViewReservations.Columns[0].HeaderText = "ID";
             DataGridViewReservations.Columns[1].HeaderText = "Name";
             DataGridViewReservations.Columns[2].HeaderText = "Email";
@@ -51,7 +50,12 @@ namespace StaySmart.User_Control
             DataGridViewReservations.Columns[7].HeaderText = "Check Out";
         }
 
-
+        private void LoadReservationsData()
+        {
+            query = "SELECT * FROM New_Reservation";
+            DataSet ds = fn.getData(query);
+            DataGridViewReservations.DataSource = ds.Tables[0];
+        }
 
         private void DataGridViewReservations_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -63,7 +67,6 @@ namespace StaySmart.User_Control
                 genderCombo.SelectedItem = row.Cells[3].Value;
                 comboBoxPlace.SelectedItem = row.Cells[4].Value;
                 textContact.Text = row.Cells[5].Value.ToString();
-
 
                 // Check in
                 if (DateTime.TryParse(row.Cells[6].Value.ToString(), out DateTime checkinDate))
@@ -84,7 +87,6 @@ namespace StaySmart.User_Control
                 {
                     MessageBox.Show("Invalid check-out date format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
             }
         }
 
@@ -92,9 +94,7 @@ namespace StaySmart.User_Control
         {
             if (DataGridViewReservations.SelectedRows.Count > 0)
             {
-
                 int reservationId = Convert.ToInt32(DataGridViewReservations.SelectedRows[0].Cells[0].Value);
-
 
                 if (comboBoxPlace.SelectedIndex != -1 && textName.Text != "" && textContact.Text != "" && textEmail.Text != "" && genderCombo.Text != "" && btnCheckin2.Value != null && btnCheckOut2.Value != null)
                 {
@@ -106,11 +106,14 @@ namespace StaySmart.User_Control
                     string checkIn = btnCheckin2.Value.ToString("yyyy-MM-dd");
                     string checkOut = btnCheckOut2.Value != null ? btnCheckOut2.Value.ToString("yyyy-MM-dd") : "";
 
-
                     string query = "UPDATE New_Reservation SET placeName = '" + placeName + "', customerName = '" + customerName + "', customerContact = '" + customerContact + "', customerEmail = '" + customerEmail + "', gender = '" + customerGender + "', checkin = '" + checkIn + "', checkout = '" + checkOut + "' WHERE newReservationId = " + reservationId;
                     fn.setData(query, "Reservation Updated Successfully");
 
-                    UC_ViewReservations_Load(sender, e); //place listesi her seferinde tekrar ekleniyor ama bunu silince de update sonrası datagridview'da gözükmüyor
+                    email.UpdateEmail(customerEmail, customerName, placeName, checkIn, checkOut);
+
+                    UC_ViewReservations_Load(sender, e); // Reload data after update
+
+                    clearAll();
                 }
                 else
                 {
@@ -138,8 +141,12 @@ namespace StaySmart.User_Control
                     string deleteQuery = "DELETE FROM New_Reservation WHERE newReservationId = " + reservationId;
                     fn.setData(deleteQuery, "Reservation Deleted Successfully");
 
+                    email.DeleteEmail(textEmail.Text, textName.Text, comboBoxPlace.SelectedItem.ToString(), btnCheckin2.Value.ToString("yyyy-MM-dd"), btnCheckOut2.Value.ToString("yyyy-MM-dd"));
+
                     // Refresh the DataGridView
                     UC_ViewReservations_Load(sender, e);
+
+                    clearAll();
                 }
             }
             else
@@ -148,5 +155,15 @@ namespace StaySmart.User_Control
             }
         }
 
+        public void clearAll()
+        {
+            comboBoxPlace.SelectedIndex = -1;
+            textName.Clear();
+            textContact.Clear();
+            textEmail.Clear();
+            genderCombo.SelectedIndex = -1;
+            btnCheckin2.ResetText();
+            btnCheckOut2.ResetText();
+        }
     }
 }

@@ -8,11 +8,13 @@ namespace StaySmart.User_Control
     {
         DbFunction fn = new DbFunction();
         string query;
+        Email email;
 
         public UC_CreateReservation()
         {
             InitializeComponent();
             LoadPlaces();
+            email = new Email("smtp.gmail.com", 587, "", "");
         }
 
         private void LoadPlaces()
@@ -41,14 +43,20 @@ namespace StaySmart.User_Control
                 string customerContact = txtContact.Text;
                 string customerGender = genderCombobox.Text;
                 string customerEmail = txtEmail.Text;
-                string gender = genderCombobox.Text;
+                //string gender = genderCombobox.Text;
                 string checkIn = btnCheckin.Text;
                 string checkOut = btnCheckOut.Text;
 
                 query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "')";
                 fn.setData(query, "Reservation Created Successfully");
 
-                
+                email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
+
+
+
+                //UC_ViewReservations ucViewReservations = (UC_ViewReservations)ParentForm.Controls["uc_ViewReservations"];
+
+
             }
             else
             {
@@ -61,8 +69,8 @@ namespace StaySmart.User_Control
             comboBoxPlaceName.SelectedIndex = -1;
             txtName.Clear();
             txtContact.Clear();
-            txtEmail.Clear();
             genderCombobox.SelectedIndex = -1;
+            txtEmail.Clear();
             btnCheckin.ResetText();
             btnCheckOut.ResetText();
         }
