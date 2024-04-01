@@ -17,24 +17,38 @@ namespace StaySmart
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool check = db.IsValidNamePass(textBox1.Text.Trim(), textBox2.Text.Trim());
-            if (textBox1.Text.Trim() == string.Empty || textBox2.Text.Trim() == string.Empty)
+            string username = textBox1.Text.Trim();
+            string password = textBox2.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
                 MessageBox.Show("Please fill all the fields", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return; 
+            }
+
+            
+            string role = db.GetUserRole(username, password);
+
+            if (role == "Admin")
+            {
+                MessageBox.Show("Login Successful! Redirecting to the Admin Dashboard");
+                Dashboard ds = new Dashboard();
+                ds.Show();
+                this.Hide();
+            }
+            else if (role == "User")
+            {
+                MessageBox.Show("Login Successful! Redirecting to the User Dashboard");
+                UserDashboard userDashboard = new UserDashboard();
+                userDashboard.Show();
+                this.Hide();
+            }
             else
             {
-                if (check)
-                {
-                    MessageBox.Show("Login Successful!, Redirecting to the Dashboard");
-                    Dashboard ds = new Dashboard();
-                    ds.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Invalid Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void pictureBoxShow_MouseHover(object sender, EventArgs e)
         {

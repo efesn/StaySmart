@@ -38,9 +38,9 @@
             pictureBox1 = new PictureBox();
             textBox1 = new TextBox();
             panel3 = new Panel();
-            pictureBoxShow = new PictureBox();
             pictureBox2 = new PictureBox();
             textBox2 = new TextBox();
+            pictureBoxShow = new PictureBox();
             button1 = new Button();
             label5 = new Label();
             label6 = new Label();
@@ -49,8 +49,8 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).BeginInit();
             SuspendLayout();
             // 
@@ -148,19 +148,6 @@
             panel3.Size = new Size(427, 42);
             panel3.TabIndex = 3;
             // 
-            // pictureBoxShow
-            // 
-            pictureBoxShow.BorderStyle = BorderStyle.FixedSingle;
-            pictureBoxShow.Image = Properties.Resources.eye;
-            pictureBoxShow.Location = new Point(728, 280);
-            pictureBoxShow.Name = "pictureBoxShow";
-            pictureBoxShow.Size = new Size(44, 42);
-            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxShow.TabIndex = 3;
-            pictureBoxShow.TabStop = false;
-            pictureBoxShow.Click += pictureBoxShow_Click;
-            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -177,6 +164,19 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(370, 23);
             textBox2.TabIndex = 1;
+            // 
+            // pictureBoxShow
+            // 
+            pictureBoxShow.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxShow.Image = Properties.Resources.eye;
+            pictureBoxShow.Location = new Point(728, 280);
+            pictureBoxShow.Name = "pictureBoxShow";
+            pictureBoxShow.Size = new Size(44, 42);
+            pictureBoxShow.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxShow.TabIndex = 3;
+            pictureBoxShow.TabStop = false;
+            pictureBoxShow.Click += pictureBoxShow_Click;
+            pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
             // 
             // button1
             // 
@@ -197,9 +197,9 @@
             label5.Font = new Font("Segoe UI", 13F);
             label5.Location = new Point(291, 152);
             label5.Name = "label5";
-            label5.Size = new Size(95, 25);
+            label5.Size = new Size(164, 25);
             label5.TabIndex = 5;
-            label5.Text = "Username:";
+            label5.Text = "Username or Email:";
             // 
             // label6
             // 
@@ -249,8 +249,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShow).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHide).EndInit();
             ResumeLayout(false);
             PerformLayout();

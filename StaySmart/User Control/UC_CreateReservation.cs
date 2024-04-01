@@ -9,12 +9,14 @@ namespace StaySmart.User_Control
         DbFunction fn = new DbFunction();
         string query;
         Email email;
+        OTPUtility otpUtility;
 
         public UC_CreateReservation()
         {
             InitializeComponent();
             LoadPlaces();
             email = new Email("smtp.gmail.com", 587, "", "");
+            otpUtility = new OTPUtility();
         }
 
         private void LoadPlaces()
@@ -46,13 +48,23 @@ namespace StaySmart.User_Control
                 //string gender = genderCombobox.Text;
                 string checkIn = btnCheckin.Text;
                 string checkOut = btnCheckOut.Text;
+                string otp = OTPUtility.GenerateOTP();
 
-                query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "')";
+               
+
+
+
+                query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout, otp) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "','" + otp + "')";
                 fn.setData(query, "Reservation Created Successfully");
 
+                query = "INSERT INTO User_Table (User_Name, User_Password, UserRole, Email, OTP) VALUES ('" + customerEmail + "','" + otp + "','User','" + customerEmail + "','" + otp + "')";
+                fn.setData(query, "User Created Successfully");
+
+                OTPUtility otpUtility = new OTPUtility();
+
+                otpUtility.SendOTPByEmail(customerEmail, otp);
+
                 email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
-
-
 
                 //UC_ViewReservations ucViewReservations = (UC_ViewReservations)ParentForm.Controls["uc_ViewReservations"];
 
