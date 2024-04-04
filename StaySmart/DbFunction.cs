@@ -116,5 +116,47 @@ namespace StaySmart
             return reservationData;
         }
 
+        public int GetPlaceCount()
+        {
+            int count = 0;
+            try
+            {
+                using (SqlConnection con = getConnection())
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM Add_Place";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    count = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching place count: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return count;
+        }
+
+        public int GetReservationCount()
+        {
+            int count = 0;
+            try
+            {
+                using (SqlConnection con = getConnection())
+                {
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM New_Reservation";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    count = (int)cmd.ExecuteScalar();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching reservation count: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return count;
+        }
+
+
+
     }
 }

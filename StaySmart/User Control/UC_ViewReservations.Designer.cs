@@ -84,7 +84,6 @@
             DataGridViewReservations.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = Color.White;
             DataGridViewReservations.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            DataGridViewReservations.BackgroundColor = Color.Gray;
             DataGridViewReservations.BorderStyle = BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
@@ -115,7 +114,7 @@
             DataGridViewReservations.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
             DataGridViewReservations.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
             DataGridViewReservations.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            DataGridViewReservations.ThemeStyle.BackColor = Color.Gray;
+            DataGridViewReservations.ThemeStyle.BackColor = Color.White;
             DataGridViewReservations.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
             DataGridViewReservations.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
             DataGridViewReservations.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;

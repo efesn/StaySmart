@@ -46,15 +46,22 @@ namespace StaySmart
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            
+
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(DialogResult.Yes == result)
+            if (DialogResult.Yes == result)
             {
                 this.Close();
 
                 Form1 login = new Form1();
                 login.Show();
             }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            mainDashboard1.Visible = true;
+            mainDashboard1.BringToFront();
+            
         }
     }
 }

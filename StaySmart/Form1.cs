@@ -11,7 +11,6 @@ namespace StaySmart
             InitializeComponent();
             textBox2.UseSystemPasswordChar = true;
             db = new DbFunction();
-
             this.AcceptButton = button1;
         }
 
@@ -23,7 +22,7 @@ namespace StaySmart
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Please fill all the fields", "Required Fields", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return; 
+                return;
             }
 
             
@@ -39,7 +38,7 @@ namespace StaySmart
             else if (role == "User")
             {
                 MessageBox.Show("Login Successful! Redirecting to the User Dashboard");
-                UserDashboard userDashboard = new UserDashboard();
+                UserDashboard userDashboard = new UserDashboard(username);
                 userDashboard.Show();
                 this.Hide();
             }

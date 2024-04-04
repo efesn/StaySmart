@@ -12,22 +12,30 @@ namespace StaySmart
 {
     public partial class UserDashboard : Form
     {
-        private DbFunction db = new DbFunction(); // Assuming you have an instance of DbFunction to interact with the database
-
-        public UserDashboard()
+        private DbFunction db = new DbFunction();
+        //private string userEmail;
+        public UserDashboard(string userEmail) 
         {
             InitializeComponent();
-            LoadReservationData();
+            LoadReservationData(userEmail); 
         }
 
-        private void LoadReservationData()
+        private void LoadReservationData(string userEmail)
         {
-            // Fetch reservation data for the current user's email
-            string userEmail = "user@example.com"; // Example email, replace with actual user's email
-            DataTable reservationData = db.GetReservationData(userEmail); // Method to fetch reservation data based on email
+            DataTable reservationData = db.GetReservationData(userEmail); 
+            dataGridView1.DataSource = reservationData; 
+        }
 
-            // Bind the DataGridView to the reservation data
-            dataGridView1.DataSource = reservationData;
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (DialogResult.Yes == result)
+            {
+                this.Close();
+
+                Form1 login = new Form1();
+                login.Show();
+            }
         }
     }
 }

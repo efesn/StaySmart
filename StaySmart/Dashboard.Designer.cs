@@ -50,14 +50,15 @@
             btnViewReservations = new Guna.UI2.WinForms.Guna2Button();
             btnCreateReservation = new Guna.UI2.WinForms.Guna2Button();
             panel2 = new Panel();
+            mainDashboard1 = new User_Control.MainDashboard();
             uC_ViewReservations1 = new User_Control.UC_ViewReservations();
             uC_CreateReservation1 = new User_Control.UC_CreateReservation();
             uC_reservations1 = new User_Control.UC_reservations();
-            label2 = new Label();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(components);
             guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(components);
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -82,7 +83,7 @@
             btnAddPlaceNav.BackColor = Color.Transparent;
             btnAddPlaceNav.BorderRadius = 15;
             btnAddPlaceNav.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnAddPlaceNav.CheckedState.FillColor = Color.Blue;
+            btnAddPlaceNav.CheckedState.FillColor = Color.RoyalBlue;
             btnAddPlaceNav.CustomizableEdges = customizableEdges1;
             btnAddPlaceNav.DisabledState.BorderColor = Color.DarkGray;
             btnAddPlaceNav.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -104,7 +105,7 @@
             btnDashboard.BackColor = Color.Transparent;
             btnDashboard.BorderRadius = 15;
             btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnDashboard.CheckedState.FillColor = Color.Blue;
+            btnDashboard.CheckedState.FillColor = Color.RoyalBlue;
             btnDashboard.CustomizableEdges = customizableEdges3;
             btnDashboard.DisabledState.BorderColor = Color.DarkGray;
             btnDashboard.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -113,12 +114,13 @@
             btnDashboard.FillColor = Color.Navy;
             btnDashboard.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 162);
             btnDashboard.ForeColor = Color.White;
-            btnDashboard.Location = new Point(31, 155);
+            btnDashboard.Location = new Point(31, 160);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnDashboard.Size = new Size(193, 48);
             btnDashboard.TabIndex = 6;
             btnDashboard.Text = "Dashboard";
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // guna2Button5
             // 
@@ -157,7 +159,7 @@
             btnMyProfile.BackColor = Color.Transparent;
             btnMyProfile.BorderRadius = 15;
             btnMyProfile.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnMyProfile.CheckedState.FillColor = Color.Blue;
+            btnMyProfile.CheckedState.FillColor = Color.RoyalBlue;
             btnMyProfile.CustomizableEdges = customizableEdges7;
             btnMyProfile.DisabledState.BorderColor = Color.DarkGray;
             btnMyProfile.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -178,7 +180,7 @@
             btnViewReservations.BackColor = Color.Transparent;
             btnViewReservations.BorderRadius = 15;
             btnViewReservations.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnViewReservations.CheckedState.FillColor = Color.Blue;
+            btnViewReservations.CheckedState.FillColor = Color.RoyalBlue;
             btnViewReservations.CustomizableEdges = customizableEdges9;
             btnViewReservations.DisabledState.BorderColor = Color.DarkGray;
             btnViewReservations.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -200,7 +202,7 @@
             btnCreateReservation.BackColor = Color.Transparent;
             btnCreateReservation.BorderRadius = 15;
             btnCreateReservation.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            btnCreateReservation.CheckedState.FillColor = Color.Blue;
+            btnCreateReservation.CheckedState.FillColor = Color.RoyalBlue;
             btnCreateReservation.CustomizableEdges = customizableEdges11;
             btnCreateReservation.DisabledState.BorderColor = Color.DarkGray;
             btnCreateReservation.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -219,29 +221,40 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(mainDashboard1);
             panel2.Controls.Add(uC_ViewReservations1);
             panel2.Controls.Add(uC_CreateReservation1);
             panel2.Controls.Add(uC_reservations1);
-            panel2.Controls.Add(label2);
             panel2.Location = new Point(265, 29);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1034, 629);
+            panel2.Size = new Size(1039, 606);
             panel2.TabIndex = 1;
+            // 
+            // mainDashboard1
+            // 
+            mainDashboard1.BackColor = Color.Navy;
+            mainDashboard1.Location = new Point(17, 0);
+            mainDashboard1.Name = "mainDashboard1";
+            mainDashboard1.Size = new Size(1032, 629);
+            mainDashboard1.TabIndex = 9;
+            mainDashboard1.Visible = false;
             // 
             // uC_ViewReservations1
             // 
-            uC_ViewReservations1.Location = new Point(33, 78);
+            uC_ViewReservations1.Location = new Point(33, 54);
             uC_ViewReservations1.Name = "uC_ViewReservations1";
-            uC_ViewReservations1.Size = new Size(961, 551);
+            uC_ViewReservations1.Size = new Size(971, 561);
             uC_ViewReservations1.TabIndex = 8;
+            uC_ViewReservations1.Visible = false;
             // 
             // uC_CreateReservation1
             // 
             uC_CreateReservation1.BackColor = Color.White;
-            uC_CreateReservation1.Location = new Point(33, 78);
+            uC_CreateReservation1.Location = new Point(33, 54);
             uC_CreateReservation1.Name = "uC_CreateReservation1";
-            uC_CreateReservation1.Size = new Size(961, 551);
+            uC_CreateReservation1.Size = new Size(971, 549);
             uC_CreateReservation1.TabIndex = 7;
+            uC_CreateReservation1.Visible = false;
             // 
             // uC_reservations1
             // 
@@ -251,18 +264,6 @@
             uC_reservations1.Size = new Size(961, 551);
             uC_reservations1.TabIndex = 6;
             uC_reservations1.Visible = false;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(313, 19);
-            label2.Name = "label2";
-            label2.Size = new Size(368, 37);
-            label2.TabIndex = 5;
-            label2.Text = "Welcome To The StaySmart";
             // 
             // guna2Elipse1
             // 
@@ -281,23 +282,27 @@
             // guna2Elipse4
             // 
             guna2Elipse4.BorderRadius = 30;
+            guna2Elipse4.TargetControl = panel2;
+            // 
+            // guna2Elipse5
+            // 
+            guna2Elipse5.BorderRadius = 30;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Navy;
-            ClientSize = new Size(1311, 670);
+            ClientSize = new Size(1326, 672);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Dashboard";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Dashboard";
+            Text = "StaySmart";
             Load += Dashboard_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -311,14 +316,15 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button btnDashboard;
-        private Label label2;
         private Guna.UI2.WinForms.Guna2Button btnAddPlaceNav;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private User_Control.UC_reservations uC_reservations1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
-        private User_Control.UC_CreateReservation uC_CreateReservation1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private User_Control.UC_ViewReservations uC_ViewReservations1;
+        private User_Control.UC_CreateReservation uC_CreateReservation1;
+        private User_Control.UC_reservations uC_reservations1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
+        private User_Control.MainDashboard mainDashboard1;
     }
 }
