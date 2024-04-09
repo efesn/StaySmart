@@ -10,16 +10,33 @@ namespace StaySmart.User_Control
         string query;
         Email email;
         OTPUtility otpUtility;
-
         public UC_CreateReservation()
         {
             InitializeComponent();
             LoadPlaces();
             email = new Email("smtp.gmail.com", 587, "", "");
             otpUtility = new OTPUtility();
+            btnCheckin.Value = DateTime.Today;
+            btnCheckOut.Value = DateTime.Today;
+
         }
 
-        private void LoadPlaces()
+        public void LoadPlacesFromDataGridView(DataGridView dataGridView1)
+        {
+            comboBoxPlaceName.Items.Clear();
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    string placeName = row.Cells["PlaceName"].Value.ToString();
+                    comboBoxPlaceName.Items.Add(placeName);
+                }
+            }
+        }
+
+
+
+        public void LoadPlaces()
         {
             query = "SELECT placeName FROM Add_Place";
             SqlDataReader sdr = fn.getForCombo(query);
@@ -32,6 +49,7 @@ namespace StaySmart.User_Control
 
         private void comboBoxPlaceName_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //LoadPlaces();
             string selectedPlaceName = comboBoxPlaceName.SelectedItem.ToString();
             MessageBox.Show("Selected Place: " + selectedPlaceName);
         }
@@ -66,6 +84,8 @@ namespace StaySmart.User_Control
 
                 email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
 
+                LoadPlaces();
+
                 //UC_ViewReservations ucViewReservations = (UC_ViewReservations)ParentForm.Controls["uc_ViewReservations"];
 
 
@@ -95,6 +115,7 @@ namespace StaySmart.User_Control
         private void UC_CreateReservation_Load(object sender, EventArgs e)
         {
             LoadPlaces();
+            
         }
     }
 }

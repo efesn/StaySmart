@@ -156,6 +156,36 @@ namespace StaySmart
             return count;
         }
 
+        public DataTable GetReportData(string query, string placeName)
+        {
+            DataTable reportData = new DataTable();
+
+            try
+            {
+                using (SqlConnection con = getConnection())
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    // Add Place Name parameter if not null or empty
+                    if (!string.IsNullOrEmpty(placeName))
+                        cmd.Parameters.AddWithValue("@PlaceName", placeName);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(reportData);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error fetching report data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return reportData;
+        }
+
+
+
+
 
 
     }

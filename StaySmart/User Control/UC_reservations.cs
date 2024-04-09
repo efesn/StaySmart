@@ -21,16 +21,7 @@ namespace StaySmart.User_Control
         public UC_reservations()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
+            UC_reservations_Load(this, null);
         }
 
         private void UC_reservations_Load(object sender, EventArgs e)
@@ -43,10 +34,15 @@ namespace StaySmart.User_Control
             DataGridView1.Columns[1].HeaderText = "Place Name";
             DataGridView1.Columns[2].HeaderText = "Place Address";
             DataGridView1.Columns[3].HeaderText = "Place Contact";
+            
         }
+
+
 
         private void btnAddPlace_Click(object sender, EventArgs e)
         {
+
+
             // place formlarını required field olarak ayarlıyoruzç
             if (placeName.Text != "" && placeAddress.Text != "" && placeContact.Text != "")
             {
@@ -60,12 +56,29 @@ namespace StaySmart.User_Control
                 UC_reservations_Load(this, null); //data ekledikten sonra datasette görünmesini sağlıyoruz
 
                 clearAll();
+
+
             }
             else
             {
                 MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            RefreshPlaceListInCreateReservationForm();
         }
+
+        private void RefreshPlaceListInCreateReservationForm()
+        {
+            var createReservationForm = Application.OpenForms.OfType<UC_CreateReservation>().FirstOrDefault();
+            if (createReservationForm != null)
+            {
+                createReservationForm.LoadPlacesFromDataGridView(DataGridView1);
+            }
+        }
+
+
+
+
 
         public void clearAll() // data ekledikten sonra textboxları temizliyoruz
         {

@@ -134,7 +134,7 @@
             label3.Size = new Size(65, 20);
             label3.TabIndex = 3;
             label3.Text = "Address:";
-            label3.Click += label3_Click;
+            
             // 
             // label4
             // 

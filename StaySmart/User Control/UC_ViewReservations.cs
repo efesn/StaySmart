@@ -52,7 +52,8 @@ namespace StaySmart.User_Control
 
         private void LoadReservationsData()
         {
-            query = "SELECT * FROM New_Reservation";
+            //query = "SELECT * FROM New_Reservation";
+            query = "SELECT newReservationId, customerName, customerEmail, gender, placeName, customerContact, checkin, checkout FROM New_Reservation";
             DataSet ds = fn.getData(query);
             DataGridViewReservations.DataSource = ds.Tables[0];
         }
@@ -164,6 +165,21 @@ namespace StaySmart.User_Control
             genderCombo.SelectedIndex = -1;
             btnCheckin2.ResetText();
             btnCheckOut2.ResetText();
+        }
+
+        private void getReport2_Click(object sender, EventArgs e)
+        {
+            string placeName = guna2TextBox1.Text;
+            
+
+            // Construct SQL query based on input values
+            string query = "SELECT * FROM New_Reservation WHERE placeName = @PlaceName";
+
+            // Fetch data from the database
+            DataTable reportData = fn.GetReportData(query, placeName);
+
+            // Display the report data in DataGridView or any other control
+            guna2DataGridView1.DataSource = reportData;
         }
     }
 }
