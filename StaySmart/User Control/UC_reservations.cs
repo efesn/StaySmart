@@ -21,7 +21,8 @@ namespace StaySmart.User_Control
         public UC_reservations()
         {
             InitializeComponent();
-            UC_reservations_Load(this, null);
+            //UC_reservations_Load(this, null);
+            UC_CreateReservation createReservation = new UC_CreateReservation();
         }
 
         private void UC_reservations_Load(object sender, EventArgs e)
@@ -53,18 +54,21 @@ namespace StaySmart.User_Control
                 query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
                 fn.setData(query, "Reservation Place Added Successfully");
 
-                UC_reservations_Load(this, null); //data ekledikten sonra datasette görünmesini sağlıyoruz
+                
+                //UC_reservations_Load(sender, e);
+
+
 
                 clearAll();
 
-
+                //RefreshPlaceListInCreateReservationForm();
+                UC_reservations_Load(this, null);
             }
             else
             {
                 MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            RefreshPlaceListInCreateReservationForm();
         }
 
         private void RefreshPlaceListInCreateReservationForm()

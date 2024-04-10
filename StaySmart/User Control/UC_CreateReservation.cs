@@ -28,11 +28,12 @@ namespace StaySmart.User_Control
             {
                 if (!row.IsNewRow)
                 {
-                    string placeName = row.Cells["PlaceName"].Value.ToString();
+                    string placeName = row.Cells["placeName"].Value.ToString();
                     comboBoxPlaceName.Items.Add(placeName);
                 }
             }
         }
+
 
 
 
@@ -49,7 +50,7 @@ namespace StaySmart.User_Control
 
         private void comboBoxPlaceName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //LoadPlaces();
+            LoadPlaces();
             string selectedPlaceName = comboBoxPlaceName.SelectedItem.ToString();
             MessageBox.Show("Selected Place: " + selectedPlaceName);
         }
@@ -85,6 +86,8 @@ namespace StaySmart.User_Control
                 email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
 
                 LoadPlaces();
+
+                UC_CreateReservation_Load(sender, e);
 
                 //UC_ViewReservations ucViewReservations = (UC_ViewReservations)ParentForm.Controls["uc_ViewReservations"];
 
