@@ -107,6 +107,8 @@ namespace StaySmart.User_Control
                     viewReservationsControl.LoadReservationsData();
                 }
 
+                
+
 
                 //LoadPlaces();
 

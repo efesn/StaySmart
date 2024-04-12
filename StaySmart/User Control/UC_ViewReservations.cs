@@ -21,7 +21,7 @@ namespace StaySmart.User_Control
         Email email;
         public UC_ViewReservations()
         {
-
+            
             InitializeComponent();
             email = new Email("smtp.gmail.com", 587, "", "");
         }
@@ -54,10 +54,14 @@ namespace StaySmart.User_Control
 
         public void LoadReservationsData()
         {
+
+            DataGridViewReservations.DataSource = null;
             //query = "SELECT * FROM New_Reservation";
             query = "SELECT newReservationId, customerName, customerEmail, gender, placeName, customerContact, checkin, checkout FROM New_Reservation";
             DataSet ds = fn.getData(query);
+
             DataGridViewReservations.DataSource = ds.Tables[0];
+            DataGridViewReservations.Refresh();
         }
 
         private void DataGridViewReservations_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -182,6 +186,11 @@ namespace StaySmart.User_Control
 
             // Display the report data in DataGridView or any other control
             guna2DataGridView1.DataSource = reportData;
+        }
+
+        private void updateReservationsButton_Click(object sender, EventArgs e)
+        {
+            LoadReservationsData();
         }
     }
 }
