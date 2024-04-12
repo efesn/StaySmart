@@ -15,6 +15,7 @@ namespace StaySmart.User_Control
     {
         DbFunction fn = new DbFunction();
         String query;
+        UC_CreateReservation createReservation;
 
         public static DataTable DataSource { get; internal set; }
 
@@ -22,7 +23,8 @@ namespace StaySmart.User_Control
         {
             InitializeComponent();
             //UC_reservations_Load(this, null);
-            UC_CreateReservation createReservation = new UC_CreateReservation();
+            //UC_CreateReservation createReservation = new UC_CreateReservation();
+            createReservation = new UC_CreateReservation();
         }
 
         private void UC_reservations_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace StaySmart.User_Control
             DataGridView1.Columns[1].HeaderText = "Place Name";
             DataGridView1.Columns[2].HeaderText = "Place Address";
             DataGridView1.Columns[3].HeaderText = "Place Contact";
-            
+
         }
 
 
@@ -54,7 +56,9 @@ namespace StaySmart.User_Control
                 query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
                 fn.setData(query, "Reservation Place Added Successfully");
 
-                
+                RefreshPlaceListInCreateReservationForm();
+
+
                 //UC_reservations_Load(sender, e);
 
 
@@ -71,16 +75,14 @@ namespace StaySmart.User_Control
 
         }
 
-        private void RefreshPlaceListInCreateReservationForm()
+        public void RefreshPlaceListInCreateReservationForm()
         {
             var createReservationForm = Application.OpenForms.OfType<UC_CreateReservation>().FirstOrDefault();
             if (createReservationForm != null)
             {
-                createReservationForm.LoadPlacesFromDataGridView(DataGridView1);
+                createReservationForm.RefreshPlaces();
             }
         }
-
-
 
 
 
@@ -100,5 +102,34 @@ namespace StaySmart.User_Control
         {
             UC_reservations_Load(this, null);
         }
+
+        private void btnDeletePlace_Click(object sender, EventArgs e)
+        {
+            if (DataGridView1.SelectedRows.Count > 0)
+            {
+                // Get the ID of the selected place
+                int placeId = Convert.ToInt32(DataGridView1.SelectedRows[0].Cells[0].Value);
+
+                // Confirm deletion with the user
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this place?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Delete the place from the database
+                    string deleteQuery = "DELETE FROM Add_Place WHERE placeId = " + placeId;
+                    fn.setData(deleteQuery, "Place Deleted Successfully");
+
+                    // Refresh the DataGridView
+                    UC_reservations_Load(sender, e);
+
+                    // Clear the form fields
+                    clearAll();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a place to delete!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

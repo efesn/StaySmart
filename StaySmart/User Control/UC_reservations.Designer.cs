@@ -40,6 +40,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             label2 = new Label();
@@ -51,6 +53,7 @@
             label5 = new Label();
             btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            btnDeletePlace = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -134,7 +137,6 @@
             label3.Size = new Size(65, 20);
             label3.TabIndex = 3;
             label3.Text = "Address:";
-            
             // 
             // label4
             // 
@@ -243,11 +245,31 @@
             guna2Elipse1.BorderRadius = 30;
             guna2Elipse1.TargetControl = this;
             // 
+            // btnDeletePlace
+            // 
+            btnDeletePlace.BorderRadius = 25;
+            btnDeletePlace.CustomizableEdges = customizableEdges9;
+            btnDeletePlace.DisabledState.BorderColor = Color.DarkGray;
+            btnDeletePlace.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnDeletePlace.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnDeletePlace.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnDeletePlace.FillColor = Color.IndianRed;
+            btnDeletePlace.Font = new Font("Segoe UI", 12F);
+            btnDeletePlace.ForeColor = Color.White;
+            btnDeletePlace.Location = new Point(709, 443);
+            btnDeletePlace.Name = "btnDeletePlace";
+            btnDeletePlace.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnDeletePlace.Size = new Size(143, 45);
+            btnDeletePlace.TabIndex = 18;
+            btnDeletePlace.Text = "Delete";
+            btnDeletePlace.Click += btnDeletePlace_Click;
+            // 
             // UC_reservations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(btnDeletePlace);
             Controls.Add(btnAddPlace);
             Controls.Add(label5);
             Controls.Add(placeContact);
@@ -281,5 +303,6 @@
         private Label label5;
         private Guna.UI2.WinForms.Guna2Button btnAddPlace;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Button btnDeletePlace;
     }
 }

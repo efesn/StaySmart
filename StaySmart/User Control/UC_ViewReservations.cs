@@ -21,12 +21,14 @@ namespace StaySmart.User_Control
         Email email;
         public UC_ViewReservations()
         {
+
             InitializeComponent();
             email = new Email("smtp.gmail.com", 587, "", "");
         }
 
-        private void UC_ViewReservations_Load(object sender, EventArgs e)
+        public void UC_ViewReservations_Load(object sender, EventArgs e)
         {
+            LoadReservationsData();
             comboBoxPlace.Items.Clear();
 
             query = "SELECT placeName FROM Add_Place";
@@ -37,7 +39,7 @@ namespace StaySmart.User_Control
             }
             sdr.Close();
 
-            LoadReservationsData(); // Load reservations data
+            //LoadReservationsData(); 
 
             // Set DataGridView columns headers
             DataGridViewReservations.Columns[0].HeaderText = "ID";
@@ -50,7 +52,7 @@ namespace StaySmart.User_Control
             DataGridViewReservations.Columns[7].HeaderText = "Check Out";
         }
 
-        private void LoadReservationsData()
+        public void LoadReservationsData()
         {
             //query = "SELECT * FROM New_Reservation";
             query = "SELECT newReservationId, customerName, customerEmail, gender, placeName, customerContact, checkin, checkout FROM New_Reservation";
@@ -112,7 +114,7 @@ namespace StaySmart.User_Control
 
                     email.UpdateEmail(customerEmail, customerName, placeName, checkIn, checkOut);
 
-                    UC_ViewReservations_Load(sender, e); // Reload data after update
+                    UC_ViewReservations_Load(sender, e);
 
                     clearAll();
                 }
@@ -131,20 +133,20 @@ namespace StaySmart.User_Control
         {
             if (DataGridViewReservations.SelectedRows.Count > 0)
             {
-                // Get the ID of the selected reservation
+
                 int reservationId = Convert.ToInt32(DataGridViewReservations.SelectedRows[0].Cells[0].Value);
 
-                // Confirm deletion with the user
+
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this reservation?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    // Delete the reservation from the database
+
                     string deleteQuery = "DELETE FROM New_Reservation WHERE newReservationId = " + reservationId;
                     fn.setData(deleteQuery, "Reservation Deleted Successfully");
 
                     email.DeleteEmail(textEmail.Text, textName.Text, comboBoxPlace.SelectedItem.ToString(), btnCheckin2.Value.ToString("yyyy-MM-dd"), btnCheckOut2.Value.ToString("yyyy-MM-dd"));
 
-                    // Refresh the DataGridView
+
                     UC_ViewReservations_Load(sender, e);
 
                     clearAll();
@@ -170,7 +172,7 @@ namespace StaySmart.User_Control
         private void getReport2_Click(object sender, EventArgs e)
         {
             string placeName = guna2TextBox1.Text;
-            
+
 
             // Construct SQL query based on input values
             string query = "SELECT * FROM New_Reservation WHERE placeName = @PlaceName";
