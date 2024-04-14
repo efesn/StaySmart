@@ -200,15 +200,15 @@
             updateReservationsButton.DisabledState.CustomBorderColor = Color.DarkGray;
             updateReservationsButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             updateReservationsButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            updateReservationsButton.FillColor = Color.Navy;
+            updateReservationsButton.FillColor = SystemColors.MenuHighlight;
             updateReservationsButton.Font = new Font("Segoe UI", 12F);
             updateReservationsButton.ForeColor = Color.White;
             updateReservationsButton.Location = new Point(389, 407);
             updateReservationsButton.Name = "updateReservationsButton";
             updateReservationsButton.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            updateReservationsButton.Size = new Size(92, 46);
+            updateReservationsButton.Size = new Size(126, 46);
             updateReservationsButton.TabIndex = 45;
-            updateReservationsButton.Text = "Update";
+            updateReservationsButton.Text = "🔄 Update";
             updateReservationsButton.Click += updateReservationsButton_Click;
             // 
             // tabPage2

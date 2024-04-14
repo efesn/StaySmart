@@ -63,7 +63,7 @@ namespace StaySmart.User_Control
         private void comboBoxPlaceName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            LoadPlaces();
+            //LoadPlaces();
 
             string selectedPlaceName = comboBoxPlaceName.SelectedItem.ToString();
             MessageBox.Show("Selected Place: " + selectedPlaceName);
@@ -107,7 +107,7 @@ namespace StaySmart.User_Control
                     viewReservationsControl.LoadReservationsData();
                 }
 
-                
+
 
 
                 //LoadPlaces();
@@ -142,9 +142,15 @@ namespace StaySmart.User_Control
 
         private void UC_CreateReservation_Load(object sender, EventArgs e)
         {
-            LoadPlaces();
+            //LoadPlaces();
             comboBoxPlaceName.Items.Clear();
 
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            comboBoxPlaceName.Items.Clear();
+            LoadPlaces();
         }
     }
 }

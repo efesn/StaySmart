@@ -46,12 +46,12 @@ namespace StaySmart
 
                 smtpClient.Send(mail);
 
-                // Optional: Log successful email sending
+                
                 Console.WriteLine("Reservation confirmation email sent successfully.");
             }
             catch (Exception ex)
             {
-                // Optional: Log failed email sending
+                
                 Console.WriteLine("Failed to send reservation confirmation email: " + ex.Message);
             }
         }
@@ -73,12 +73,12 @@ namespace StaySmart
 
                 smtpClient.Send(mail);
 
-                // Optional: Log successful email sending
+                
                 Console.WriteLine("Reservation updated email sent successfully.");
             }
             catch (Exception ex)
             {
-                // Optional: Log failed email sending
+                
                 Console.WriteLine("Failed to send reservation updated email: " + ex.Message);
             }
         }
@@ -100,12 +100,10 @@ namespace StaySmart
 
                 smtpClient.Send(mail);
 
-                // Optional: Log successful email sending
                 Console.WriteLine("Reservation deleted email sent successfully.");
             }
             catch (Exception ex)
             {
-                // Optional: Log failed email sending
                 Console.WriteLine("Failed to send reservation deleted email: " + ex.Message);
             }
         }
