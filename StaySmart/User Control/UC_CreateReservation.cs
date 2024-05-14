@@ -73,56 +73,77 @@ namespace StaySmart.User_Control
         {
             if (comboBoxPlaceName.SelectedIndex != -1 && txtName.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && genderCombobox.Text != "" && txtCheckin.Text != "")
             {
-                //string placeName = comboBoxPlaceName.SelectedItem.ToString();
                 string placeName = comboBoxPlaceName.SelectedItem.ToString();
                 string customerName = txtName.Text;
                 string customerContact = txtContact.Text;
                 string customerGender = genderCombobox.Text;
                 string customerEmail = txtEmail.Text;
-                //string gender = genderCombobox.Text;
                 string checkIn = btnCheckin.Text;
                 string checkOut = btnCheckOut.Text;
                 string otp = OTPUtility.GenerateOTP();
 
-
-
-
-
-                query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout, otp) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "','" + otp + "')";
-                fn.setData(query, "Reservation Created Successfully");
-
-                query = "INSERT INTO User_Table (User_Name, User_Password, UserRole, Email, OTP) VALUES ('" + customerEmail + "','" + otp + "','User','" + customerEmail + "','" + otp + "')";
-                fn.setData(query, "User Created Successfully");
-
-                OTPUtility otpUtility = new OTPUtility();
-
-                otpUtility.SendOTPByEmail(customerEmail, otp);
-
-                email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
-
-                var parentForm = this.ParentForm as Form1;
-                if (parentForm != null)
+                // only numeric characters
+                if (customerContact.All(char.IsDigit))
                 {
-                    var viewReservationsControl = parentForm.Controls["uc_ViewReservations"] as UC_ViewReservations;
-                    viewReservationsControl.LoadReservationsData();
+                    if (customerContact.Length >= 3 && customerContact.Length <= 15)
+                    {
+                        // is email valid?
+                        if (IsValidEmail(customerEmail))
+                        {
+                            query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout, otp) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "','" + otp + "')";
+                            fn.setData(query, "Reservation Created Successfully");
+
+                            query = "INSERT INTO User_Table (User_Name, User_Password, UserRole, Email, OTP) VALUES ('" + customerEmail + "','" + otp + "','User','" + customerEmail + "','" + otp + "')";
+                            fn.setData(query, "User Created Successfully");
+
+                            OTPUtility otpUtility = new OTPUtility();
+                            otpUtility.SendOTPByEmail(customerEmail, otp);
+
+                            email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
+
+                            var parentForm = this.ParentForm as Form1;
+                            if (parentForm != null)
+                            {
+                                var viewReservationsControl = parentForm.Controls["uc_ViewReservations"] as UC_ViewReservations;
+                                viewReservationsControl.LoadReservationsData();
+                            }
+
+                            clearAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid email address!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid phone number between 3 and 15 digits!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-
-
-
-
-                //LoadPlaces();
-
-                //UC_CreateReservation_Load(sender, e);
-
-                //UC_ViewReservations ucViewReservations = (UC_ViewReservations)ParentForm.Controls["uc_ViewReservations"];
-
-
+                else
+                {
+                    MessageBox.Show("Please enter a valid numeric phone number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
                 MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         public void clearAll()
         {
@@ -151,6 +172,18 @@ namespace StaySmart.User_Control
         {
             comboBoxPlaceName.Items.Clear();
             LoadPlaces();
+        }
+
+        private void btnCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+
+            DateTime checkInDate = btnCheckin.Value;
+            DateTime checkOutDate = btnCheckOut.Value;
+
+            if (btnCheckOut.Value < btnCheckin.Value)
+            {
+                MessageBox.Show("Check Out Date cannot be less than Check In Date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

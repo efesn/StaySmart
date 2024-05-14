@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             panelPlace = new Guna.UI2.WinForms.Guna2Panel();
             labelPlace = new Label();
@@ -41,6 +43,7 @@
             labelReservations = new Label();
             labelReservationsCount = new Label();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
+            updateReservationsButton = new Guna.UI2.WinForms.Guna2Button();
             panelPlace.SuspendLayout();
             panelReservations.SuspendLayout();
             SuspendLayout();
@@ -64,11 +67,11 @@
             panelPlace.BorderThickness = 1;
             panelPlace.Controls.Add(labelPlace);
             panelPlace.Controls.Add(labelPlaceCount);
-            panelPlace.CustomizableEdges = customizableEdges1;
+            panelPlace.CustomizableEdges = customizableEdges5;
             panelPlace.FillColor = Color.White;
             panelPlace.Location = new Point(79, 206);
             panelPlace.Name = "panelPlace";
-            panelPlace.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            panelPlace.ShadowDecoration.CustomizableEdges = customizableEdges6;
             panelPlace.Size = new Size(284, 168);
             panelPlace.TabIndex = 9;
             // 
@@ -102,11 +105,11 @@
             panelReservations.BorderThickness = 1;
             panelReservations.Controls.Add(labelReservations);
             panelReservations.Controls.Add(labelReservationsCount);
-            panelReservations.CustomizableEdges = customizableEdges3;
+            panelReservations.CustomizableEdges = customizableEdges7;
             panelReservations.FillColor = Color.White;
             panelReservations.Location = new Point(621, 206);
             panelReservations.Name = "panelReservations";
-            panelReservations.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            panelReservations.ShadowDecoration.CustomizableEdges = customizableEdges8;
             panelReservations.Size = new Size(288, 168);
             panelReservations.TabIndex = 10;
             // 
@@ -137,11 +140,31 @@
             guna2Elipse1.BorderRadius = 30;
             guna2Elipse1.TargetControl = this;
             // 
+            // updateReservationsButton
+            // 
+            updateReservationsButton.BorderRadius = 25;
+            updateReservationsButton.CustomizableEdges = customizableEdges9;
+            updateReservationsButton.DisabledState.BorderColor = Color.DarkGray;
+            updateReservationsButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            updateReservationsButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            updateReservationsButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            updateReservationsButton.FillColor = SystemColors.MenuHighlight;
+            updateReservationsButton.Font = new Font("Segoe UI", 12F);
+            updateReservationsButton.ForeColor = Color.White;
+            updateReservationsButton.Location = new Point(421, 423);
+            updateReservationsButton.Name = "updateReservationsButton";
+            updateReservationsButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            updateReservationsButton.Size = new Size(126, 46);
+            updateReservationsButton.TabIndex = 46;
+            updateReservationsButton.Text = "🔄 Update";
+            updateReservationsButton.Click += updateReservationsButton_Click;
+            // 
             // MainDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Navy;
+            Controls.Add(updateReservationsButton);
             Controls.Add(panelReservations);
             Controls.Add(panelPlace);
             Controls.Add(label2);
@@ -166,5 +189,6 @@
         private Label labelReservations;
         private Label labelReservationsCount;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Button updateReservationsButton;
     }
 }

@@ -176,15 +176,11 @@ namespace StaySmart.User_Control
         private void getReport2_Click(object sender, EventArgs e)
         {
             string placeName = guna2TextBox1.Text;
-
-
-            // Construct SQL query based on input values
+            
             string query = "SELECT * FROM New_Reservation WHERE placeName = @PlaceName";
 
-            // Fetch data from the database
             DataTable reportData = fn.GetReportData(query, placeName);
 
-            // Display the report data in DataGridView or any other control
             guna2DataGridView1.DataSource = reportData;
         }
 

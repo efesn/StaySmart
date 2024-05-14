@@ -284,6 +284,7 @@
             btnCheckOut.Size = new Size(200, 36);
             btnCheckOut.TabIndex = 25;
             btnCheckOut.Value = new DateTime(2024, 3, 22, 18, 44, 28, 760);
+            btnCheckOut.ValueChanged += btnCheckOut_ValueChanged;
             // 
             // label8
             // 

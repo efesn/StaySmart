@@ -44,36 +44,41 @@ namespace StaySmart.User_Control
 
         private void btnAddPlace_Click(object sender, EventArgs e)
         {
-
-
-            // place formlarını required field olarak ayarlıyoruzç
-            if (placeName.Text != "" && placeAddress.Text != "" && placeContact.Text != "")
+            if (placeName.Text != "" && placeAddress.Text != "")
             {
                 String name = placeName.Text;
                 String address = placeAddress.Text;
                 String contact = placeContact.Text;
 
-                query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
-                fn.setData(query, "Reservation Place Added Successfully");
+                // only numeric characters
+                if (contact.All(char.IsDigit))
+                {
+                    if (contact.Length >= 3 && contact.Length <= 15)
+                    {
+                        query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
+                        fn.setData(query, "Reservation Place Added Successfully");
 
-                RefreshPlaceListInCreateReservationForm();
+                        RefreshPlaceListInCreateReservationForm();
 
-
-                //UC_reservations_Load(sender, e);
-
-
-
-                clearAll();
-
-                //RefreshPlaceListInCreateReservationForm();
-                UC_reservations_Load(this, null);
+                        clearAll();
+                        UC_reservations_Load(this, null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid phone number between 3 and 15 digits!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid numeric phone number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
                 MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
         }
+
 
         public void RefreshPlaceListInCreateReservationForm()
         {
@@ -86,7 +91,7 @@ namespace StaySmart.User_Control
 
 
 
-        public void clearAll() // data ekledikten sonra textboxları temizliyoruz
+        public void clearAll() 
         {
             placeName.Clear();
             placeAddress.Clear();

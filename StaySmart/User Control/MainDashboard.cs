@@ -40,5 +40,11 @@ namespace StaySmart.User_Control
         {
 
         }
+
+        private void updateReservationsButton_Click(object sender, EventArgs e)
+        {
+            PlaceCount();
+            ReservationCount();
+        }
     }
 }
