@@ -24,6 +24,10 @@ namespace StaySmart.User_Control
             
             InitializeComponent();
             email = new Email("smtp.gmail.com", 587, "", "");
+
+            textName.MaxLength = 50;
+            textContact.MaxLength = 15; 
+            textEmail.MaxLength = 100; 
         }
 
         public void UC_ViewReservations_Load(object sender, EventArgs e)
@@ -113,14 +117,30 @@ namespace StaySmart.User_Control
                     string checkIn = btnCheckin2.Value.ToString("yyyy-MM-dd");
                     string checkOut = btnCheckOut2.Value != null ? btnCheckOut2.Value.ToString("yyyy-MM-dd") : "";
 
-                    string query = "UPDATE New_Reservation SET placeName = '" + placeName + "', customerName = '" + customerName + "', customerContact = '" + customerContact + "', customerEmail = '" + customerEmail + "', gender = '" + customerGender + "', checkin = '" + checkIn + "', checkout = '" + checkOut + "' WHERE newReservationId = " + reservationId;
-                    fn.setData(query, "Reservation Updated Successfully");
+                    // Validate email
+                    if (IsValidEmail(customerEmail))
+                    {
+                        // Validate phone number
+                        if (customerContact.All(char.IsDigit) && customerContact.Length >= 3 && customerContact.Length <= 15)
+                        {
+                            string query = "UPDATE New_Reservation SET placeName = '" + placeName + "', customerName = '" + customerName + "', customerContact = '" + customerContact + "', customerEmail = '" + customerEmail + "', gender = '" + customerGender + "', checkin = '" + checkIn + "', checkout = '" + checkOut + "' WHERE newReservationId = " + reservationId;
+                            fn.setData(query, "Reservation Updated Successfully");
 
-                    email.UpdateEmail(customerEmail, customerName, placeName, checkIn, checkOut);
+                            email.UpdateEmail(customerEmail, customerName, placeName, checkIn, checkOut);
 
-                    UC_ViewReservations_Load(sender, e);
+                            UC_ViewReservations_Load(sender, e);
 
-                    clearAll();
+                            clearAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid phone number between 3 and 15 digits!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a valid email address!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
@@ -132,6 +152,20 @@ namespace StaySmart.User_Control
                 MessageBox.Show("Please select a reservation to update!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {

@@ -22,8 +22,9 @@ namespace StaySmart.User_Control
         public UC_reservations()
         {
             InitializeComponent();
-            //UC_reservations_Load(this, null);
-            //UC_CreateReservation createReservation = new UC_CreateReservation();
+            placeName.MaxLength = 50; 
+            placeAddress.MaxLength = 100; 
+            placeContact.MaxLength = 15; 
             createReservation = new UC_CreateReservation();
         }
 

@@ -23,6 +23,10 @@ namespace StaySmart.User_Control
             btnCheckin.Value = DateTime.Today;
             btnCheckOut.Value = DateTime.Today;
 
+            txtName.MaxLength = 50; 
+            txtContact.MaxLength = 15; 
+            txtEmail.MaxLength = 100; 
+
         }
 
         public void LoadPlacesFromDataGridView(DataGridView dataGridView1)
@@ -182,7 +186,7 @@ namespace StaySmart.User_Control
             if (checkOutDate < checkInDate)
             {
                 MessageBox.Show("Check Out Date cannot be earlier than Check In Date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnCheckOut.Value = checkInDate; 
+                btnCheckOut.Value = checkInDate;
             }
         }
 
