@@ -176,15 +176,16 @@ namespace StaySmart.User_Control
 
         private void btnCheckOut_ValueChanged(object sender, EventArgs e)
         {
-
             DateTime checkInDate = btnCheckin.Value;
             DateTime checkOutDate = btnCheckOut.Value;
 
-            if (btnCheckOut.Value < btnCheckin.Value)
+            if (checkOutDate < checkInDate)
             {
-                MessageBox.Show("Check Out Date cannot be less than Check In Date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Check Out Date cannot be earlier than Check In Date", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnCheckOut.Value = checkInDate; 
             }
         }
+
     }
 }
 
