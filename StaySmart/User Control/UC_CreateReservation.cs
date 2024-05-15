@@ -105,7 +105,7 @@ namespace StaySmart.User_Control
 
                             email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
 
-                            var parentForm = this.ParentForm as Form1;
+                            var parentForm = this.ParentForm as LoginForm;
                             if (parentForm != null)
                             {
                                 var viewReservationsControl = parentForm.Controls["uc_ViewReservations"] as UC_ViewReservations;

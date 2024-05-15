@@ -33,7 +33,7 @@ namespace StaySmart
             {
                 this.Close();
 
-                Form1 login = new Form1();
+                LoginForm login = new LoginForm();
                 login.Show();
             }
         }

@@ -2,22 +2,22 @@ using System.Data.Common;
 
 namespace StaySmart
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
 
         DbFunction db = new DbFunction();
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
-            textBox2.UseSystemPasswordChar = true;
+            loginPassword.UseSystemPasswordChar = true;
             db = new DbFunction();
-            this.AcceptButton = button1;
+            this.AcceptButton = btnLogin;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = textBox1.Text.Trim();
-            string password = textBox2.Text.Trim();
+            string username = loginUsername.Text.Trim();
+            string password = loginPassword.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
@@ -64,14 +64,14 @@ namespace StaySmart
         private void pictureBoxShow_Click(object sender, EventArgs e)
         {
             pictureBoxShow.Hide();
-            textBox2.UseSystemPasswordChar = false;
+            loginPassword.UseSystemPasswordChar = false;
             pictureBoxHide.Show();
         }
 
         private void pictureBoxHide_Click(object sender, EventArgs e)
         {
             pictureBoxHide.Hide();
-            textBox2.UseSystemPasswordChar = true;
+            loginPassword.UseSystemPasswordChar = true;
             pictureBoxShow.Show();
         }
     }

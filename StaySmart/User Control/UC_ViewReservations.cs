@@ -21,13 +21,13 @@ namespace StaySmart.User_Control
         Email email;
         public UC_ViewReservations()
         {
-            
+
             InitializeComponent();
             email = new Email("smtp.gmail.com", 587, "", "");
 
             textName.MaxLength = 50;
-            textContact.MaxLength = 15; 
-            textEmail.MaxLength = 100; 
+            textContact.MaxLength = 15;
+            textEmail.MaxLength = 100;
         }
 
         public void UC_ViewReservations_Load(object sender, EventArgs e)
@@ -207,10 +207,10 @@ namespace StaySmart.User_Control
             btnCheckOut2.ResetText();
         }
 
-        private void getReport2_Click(object sender, EventArgs e)
+        private void btnGetReport_Click(object sender, EventArgs e)
         {
-            string placeName = guna2TextBox1.Text;
-            
+            string placeName = getReportCombobox.Text;
+
             string query = "SELECT * FROM New_Reservation WHERE placeName = @PlaceName";
 
             DataTable reportData = fn.GetReportData(query, placeName);
@@ -221,6 +221,11 @@ namespace StaySmart.User_Control
         private void updateReservationsButton_Click(object sender, EventArgs e)
         {
             LoadReservationsData();
+        }
+
+        private void textContact_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

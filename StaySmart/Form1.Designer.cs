@@ -1,6 +1,6 @@
 ﻿namespace StaySmart
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             panel1 = new Panel();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            label4 = new Label();
+            loginTitle = new Label();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            loginUsername = new TextBox();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
-            textBox2 = new TextBox();
+            loginPassword = new TextBox();
             pictureBoxShow = new PictureBox();
-            button1 = new Button();
+            btnLogin = new Button();
             label5 = new Label();
             label6 = new Label();
             pictureBoxHide = new PictureBox();
@@ -99,23 +99,23 @@
             label1.TabIndex = 0;
             label1.Text = "Welcome To The";
             // 
-            // label4
+            // loginTitle
             // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 18F);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(460, 97);
-            label4.Name = "label4";
-            label4.Size = new Size(88, 32);
-            label4.TabIndex = 1;
-            label4.Text = "Sign In";
+            loginTitle.AutoSize = true;
+            loginTitle.BackColor = Color.Transparent;
+            loginTitle.Font = new Font("Segoe UI", 18F);
+            loginTitle.ForeColor = Color.Black;
+            loginTitle.Location = new Point(460, 97);
+            loginTitle.Name = "loginTitle";
+            loginTitle.Size = new Size(88, 32);
+            loginTitle.TabIndex = 1;
+            loginTitle.Text = "Sign In";
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(pictureBox1);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(loginUsername);
             panel2.Location = new Point(295, 189);
             panel2.Name = "panel2";
             panel2.Size = new Size(427, 42);
@@ -131,18 +131,18 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // loginUsername
             // 
-            textBox1.Location = new Point(52, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(370, 23);
-            textBox1.TabIndex = 0;
+            loginUsername.Location = new Point(52, 10);
+            loginUsername.Name = "loginUsername";
+            loginUsername.Size = new Size(370, 23);
+            loginUsername.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
             panel3.Controls.Add(pictureBox2);
-            panel3.Controls.Add(textBox2);
+            panel3.Controls.Add(loginPassword);
             panel3.Location = new Point(295, 280);
             panel3.Name = "panel3";
             panel3.Size = new Size(427, 42);
@@ -158,12 +158,12 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // loginPassword
             // 
-            textBox2.Location = new Point(52, 11);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(370, 23);
-            textBox2.TabIndex = 1;
+            loginPassword.Location = new Point(52, 11);
+            loginPassword.Name = "loginPassword";
+            loginPassword.Size = new Size(370, 23);
+            loginPassword.TabIndex = 1;
             // 
             // pictureBoxShow
             // 
@@ -178,18 +178,18 @@
             pictureBoxShow.Click += pictureBoxShow_Click;
             pictureBoxShow.MouseHover += pictureBoxShow_MouseHover;
             // 
-            // button1
+            // btnLogin
             // 
-            button1.BackColor = Color.Navy;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(448, 343);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 46);
-            button1.TabIndex = 4;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnLogin.BackColor = Color.Navy;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(448, 343);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(121, 46);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Login";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label5
             // 
@@ -224,7 +224,7 @@
             pictureBoxHide.Click += pictureBoxHide_Click;
             pictureBoxHide.MouseHover += pictureBoxHide_MouseHover;
             // 
-            // Form1
+            // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -234,12 +234,12 @@
             Controls.Add(label5);
             Controls.Add(pictureBoxShow);
             Controls.Add(pictureBoxHide);
-            Controls.Add(button1);
+            Controls.Add(btnLogin);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(label4);
+            Controls.Add(loginTitle);
             Controls.Add(panel1);
-            Name = "Form1";
+            Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             panel1.ResumeLayout(false);
@@ -262,14 +262,14 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Label label4;
+        private Label loginTitle;
         private Panel panel2;
-        private TextBox textBox1;
+        private TextBox loginUsername;
         private Panel panel3;
-        private TextBox textBox2;
+        private TextBox loginPassword;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Button button1;
+        private Button btnLogin;
         private Label label5;
         private Label label6;
         private PictureBox pictureBoxShow;

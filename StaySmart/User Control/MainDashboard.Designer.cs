@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            label2 = new Label();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            welcomeLabel = new Label();
             panelPlace = new Guna.UI2.WinForms.Guna2Panel();
             labelPlace = new Label();
             labelPlaceCount = new Label();
@@ -48,17 +48,17 @@
             panelReservations.SuspendLayout();
             SuspendLayout();
             // 
-            // label2
+            // welcomeLabel
             // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(308, 87);
-            label2.Name = "label2";
-            label2.Size = new Size(368, 37);
-            label2.TabIndex = 6;
-            label2.Text = "Welcome To The StaySmart";
+            welcomeLabel.AutoSize = true;
+            welcomeLabel.BackColor = Color.Transparent;
+            welcomeLabel.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            welcomeLabel.ForeColor = Color.White;
+            welcomeLabel.Location = new Point(308, 87);
+            welcomeLabel.Name = "welcomeLabel";
+            welcomeLabel.Size = new Size(368, 37);
+            welcomeLabel.TabIndex = 6;
+            welcomeLabel.Text = "Welcome To The StaySmart";
             // 
             // panelPlace
             // 
@@ -67,11 +67,11 @@
             panelPlace.BorderThickness = 1;
             panelPlace.Controls.Add(labelPlace);
             panelPlace.Controls.Add(labelPlaceCount);
-            panelPlace.CustomizableEdges = customizableEdges5;
+            panelPlace.CustomizableEdges = customizableEdges7;
             panelPlace.FillColor = Color.White;
             panelPlace.Location = new Point(79, 206);
             panelPlace.Name = "panelPlace";
-            panelPlace.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            panelPlace.ShadowDecoration.CustomizableEdges = customizableEdges8;
             panelPlace.Size = new Size(284, 168);
             panelPlace.TabIndex = 9;
             // 
@@ -105,11 +105,11 @@
             panelReservations.BorderThickness = 1;
             panelReservations.Controls.Add(labelReservations);
             panelReservations.Controls.Add(labelReservationsCount);
-            panelReservations.CustomizableEdges = customizableEdges7;
+            panelReservations.CustomizableEdges = customizableEdges9;
             panelReservations.FillColor = Color.White;
             panelReservations.Location = new Point(621, 206);
             panelReservations.Name = "panelReservations";
-            panelReservations.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            panelReservations.ShadowDecoration.CustomizableEdges = customizableEdges10;
             panelReservations.Size = new Size(288, 168);
             panelReservations.TabIndex = 10;
             // 
@@ -143,7 +143,7 @@
             // updateReservationsButton
             // 
             updateReservationsButton.BorderRadius = 25;
-            updateReservationsButton.CustomizableEdges = customizableEdges9;
+            updateReservationsButton.CustomizableEdges = customizableEdges11;
             updateReservationsButton.DisabledState.BorderColor = Color.DarkGray;
             updateReservationsButton.DisabledState.CustomBorderColor = Color.DarkGray;
             updateReservationsButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -153,7 +153,7 @@
             updateReservationsButton.ForeColor = Color.White;
             updateReservationsButton.Location = new Point(421, 423);
             updateReservationsButton.Name = "updateReservationsButton";
-            updateReservationsButton.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            updateReservationsButton.ShadowDecoration.CustomizableEdges = customizableEdges12;
             updateReservationsButton.Size = new Size(126, 46);
             updateReservationsButton.TabIndex = 46;
             updateReservationsButton.Text = "🔄 Update";
@@ -167,7 +167,7 @@
             Controls.Add(updateReservationsButton);
             Controls.Add(panelReservations);
             Controls.Add(panelPlace);
-            Controls.Add(label2);
+            Controls.Add(welcomeLabel);
             Name = "MainDashboard";
             Size = new Size(961, 551);
             Load += MainDashboard_Load;
@@ -181,7 +181,7 @@
 
         #endregion
 
-        private Label label2;
+        private Label welcomeLabel;
         private Guna.UI2.WinForms.Guna2Panel panelPlace;
         private Label labelPlace;
         private Label labelPlaceCount;

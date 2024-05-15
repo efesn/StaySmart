@@ -29,67 +29,67 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            label1 = new Label();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            addNewPlaceTitle = new Label();
             DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            newPlaceNameLabel = new Label();
+            newPlaceAddressLabel = new Label();
+            newPlaceContactLabel = new Label();
             placeName = new Guna.UI2.WinForms.Guna2TextBox();
             placeAddress = new Guna.UI2.WinForms.Guna2TextBox();
             placeContact = new Guna.UI2.WinForms.Guna2TextBox();
-            label5 = new Label();
+            newPlaceFormTitle = new Label();
             btnAddPlace = new Guna.UI2.WinForms.Guna2Button();
             guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(components);
             btnDeletePlace = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)DataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // addNewPlaceTitle
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label1.Location = new Point(25, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(196, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Add New Place";
+            addNewPlaceTitle.AutoSize = true;
+            addNewPlaceTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            addNewPlaceTitle.Location = new Point(25, 25);
+            addNewPlaceTitle.Name = "addNewPlaceTitle";
+            addNewPlaceTitle.Size = new Size(196, 37);
+            addNewPlaceTitle.TabIndex = 0;
+            addNewPlaceTitle.Text = "Add New Place";
             // 
             // DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             DataGridView1.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             DataGridView1.ColumnHeadersHeight = 20;
             DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.White;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             DataGridView1.Location = new Point(25, 79);
             DataGridView1.Name = "DataGridView1";
@@ -118,40 +118,40 @@
             DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
-            // label2
+            // newPlaceNameLabel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label2.Location = new Point(641, 128);
-            label2.Name = "label2";
-            label2.Size = new Size(137, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Name of The Place:";
+            newPlaceNameLabel.AutoSize = true;
+            newPlaceNameLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            newPlaceNameLabel.Location = new Point(641, 128);
+            newPlaceNameLabel.Name = "newPlaceNameLabel";
+            newPlaceNameLabel.Size = new Size(137, 20);
+            newPlaceNameLabel.TabIndex = 2;
+            newPlaceNameLabel.Text = "Name of The Place:";
             // 
-            // label3
+            // newPlaceAddressLabel
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11.25F);
-            label3.Location = new Point(641, 213);
-            label3.Name = "label3";
-            label3.Size = new Size(65, 20);
-            label3.TabIndex = 3;
-            label3.Text = "Address:";
+            newPlaceAddressLabel.AutoSize = true;
+            newPlaceAddressLabel.Font = new Font("Segoe UI", 11.25F);
+            newPlaceAddressLabel.Location = new Point(641, 213);
+            newPlaceAddressLabel.Name = "newPlaceAddressLabel";
+            newPlaceAddressLabel.Size = new Size(65, 20);
+            newPlaceAddressLabel.TabIndex = 3;
+            newPlaceAddressLabel.Text = "Address:";
             // 
-            // label4
+            // newPlaceContactLabel
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 11.25F);
-            label4.Location = new Point(641, 292);
-            label4.Name = "label4";
-            label4.Size = new Size(121, 20);
-            label4.TabIndex = 4;
-            label4.Text = "Contact Number:";
+            newPlaceContactLabel.AutoSize = true;
+            newPlaceContactLabel.Font = new Font("Segoe UI", 11.25F);
+            newPlaceContactLabel.Location = new Point(641, 292);
+            newPlaceContactLabel.Name = "newPlaceContactLabel";
+            newPlaceContactLabel.Size = new Size(121, 20);
+            newPlaceContactLabel.TabIndex = 4;
+            newPlaceContactLabel.Text = "Contact Number:";
             // 
             // placeName
             // 
             placeName.BorderColor = Color.Black;
-            placeName.CustomizableEdges = customizableEdges1;
+            placeName.CustomizableEdges = customizableEdges11;
             placeName.DefaultText = "";
             placeName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             placeName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -165,14 +165,14 @@
             placeName.PasswordChar = '\0';
             placeName.PlaceholderText = "";
             placeName.SelectedText = "";
-            placeName.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            placeName.ShadowDecoration.CustomizableEdges = customizableEdges12;
             placeName.Size = new Size(269, 36);
             placeName.TabIndex = 6;
             // 
             // placeAddress
             // 
             placeAddress.BorderColor = Color.Black;
-            placeAddress.CustomizableEdges = customizableEdges3;
+            placeAddress.CustomizableEdges = customizableEdges13;
             placeAddress.DefaultText = "";
             placeAddress.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             placeAddress.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -186,14 +186,14 @@
             placeAddress.PasswordChar = '\0';
             placeAddress.PlaceholderText = "";
             placeAddress.SelectedText = "";
-            placeAddress.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            placeAddress.ShadowDecoration.CustomizableEdges = customizableEdges14;
             placeAddress.Size = new Size(269, 36);
             placeAddress.TabIndex = 7;
             // 
             // placeContact
             // 
             placeContact.BorderColor = Color.Black;
-            placeContact.CustomizableEdges = customizableEdges5;
+            placeContact.CustomizableEdges = customizableEdges15;
             placeContact.DefaultText = "";
             placeContact.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             placeContact.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -207,24 +207,24 @@
             placeContact.PasswordChar = '\0';
             placeContact.PlaceholderText = "";
             placeContact.SelectedText = "";
-            placeContact.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            placeContact.ShadowDecoration.CustomizableEdges = customizableEdges16;
             placeContact.Size = new Size(269, 36);
             placeContact.TabIndex = 8;
             // 
-            // label5
+            // newPlaceFormTitle
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
-            label5.Location = new Point(641, 76);
-            label5.Name = "label5";
-            label5.Size = new Size(260, 30);
-            label5.TabIndex = 9;
-            label5.Text = "Information of the Place:";
+            newPlaceFormTitle.AutoSize = true;
+            newPlaceFormTitle.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            newPlaceFormTitle.Location = new Point(641, 76);
+            newPlaceFormTitle.Name = "newPlaceFormTitle";
+            newPlaceFormTitle.Size = new Size(260, 30);
+            newPlaceFormTitle.TabIndex = 9;
+            newPlaceFormTitle.Text = "Information of the Place:";
             // 
             // btnAddPlace
             // 
             btnAddPlace.BorderRadius = 25;
-            btnAddPlace.CustomizableEdges = customizableEdges7;
+            btnAddPlace.CustomizableEdges = customizableEdges17;
             btnAddPlace.DisabledState.BorderColor = Color.DarkGray;
             btnAddPlace.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAddPlace.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -234,7 +234,7 @@
             btnAddPlace.ForeColor = Color.White;
             btnAddPlace.Location = new Point(709, 376);
             btnAddPlace.Name = "btnAddPlace";
-            btnAddPlace.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnAddPlace.ShadowDecoration.CustomizableEdges = customizableEdges18;
             btnAddPlace.Size = new Size(143, 45);
             btnAddPlace.TabIndex = 17;
             btnAddPlace.Text = "Add The Place";
@@ -248,7 +248,7 @@
             // btnDeletePlace
             // 
             btnDeletePlace.BorderRadius = 25;
-            btnDeletePlace.CustomizableEdges = customizableEdges9;
+            btnDeletePlace.CustomizableEdges = customizableEdges19;
             btnDeletePlace.DisabledState.BorderColor = Color.DarkGray;
             btnDeletePlace.DisabledState.CustomBorderColor = Color.DarkGray;
             btnDeletePlace.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -258,7 +258,7 @@
             btnDeletePlace.ForeColor = Color.White;
             btnDeletePlace.Location = new Point(709, 443);
             btnDeletePlace.Name = "btnDeletePlace";
-            btnDeletePlace.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnDeletePlace.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnDeletePlace.Size = new Size(143, 45);
             btnDeletePlace.TabIndex = 18;
             btnDeletePlace.Text = "Delete";
@@ -271,15 +271,15 @@
             BackColor = Color.White;
             Controls.Add(btnDeletePlace);
             Controls.Add(btnAddPlace);
-            Controls.Add(label5);
+            Controls.Add(newPlaceFormTitle);
             Controls.Add(placeContact);
             Controls.Add(placeAddress);
             Controls.Add(placeName);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(newPlaceContactLabel);
+            Controls.Add(newPlaceAddressLabel);
+            Controls.Add(newPlaceNameLabel);
             Controls.Add(DataGridView1);
-            Controls.Add(label1);
+            Controls.Add(addNewPlaceTitle);
             Name = "UC_reservations";
             Size = new Size(961, 551);
             Load += UC_reservations_Load;
@@ -292,15 +292,15 @@
 
         #endregion
 
-        private Label label1;
+        private Label addNewPlaceTitle;
         private Guna.UI2.WinForms.Guna2DataGridView DataGridView1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label newPlaceNameLabel;
+        private Label newPlaceAddressLabel;
+        private Label newPlaceContactLabel;
         private Guna.UI2.WinForms.Guna2TextBox placeName;
         private Guna.UI2.WinForms.Guna2TextBox placeAddress;
         private Guna.UI2.WinForms.Guna2TextBox placeContact;
-        private Label label5;
+        private Label newPlaceFormTitle;
         private Guna.UI2.WinForms.Guna2Button btnAddPlace;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnDeletePlace;
