@@ -45,19 +45,20 @@ namespace StaySmart.User_Control
 
         private void btnAddPlace_Click(object sender, EventArgs e)
         {
-            if (placeName.Text != "" && placeAddress.Text != "")
+            try
             {
-                String name = placeName.Text;
-                String address = placeAddress.Text;
-                String contact = placeContact.Text;
-
-                // only numeric characters
-                if (contact.All(char.IsDigit))
+                if (!string.IsNullOrEmpty(placeName.Text) && !string.IsNullOrEmpty(placeAddress.Text))
                 {
-                    if (contact.Length >= 3 && contact.Length <= 15)
+                    string name = placeName.Text.Trim();
+                    string address = placeAddress.Text.Trim();
+                    string contact = placeContact.Text.Trim();
+
+                    if (contact.All(char.IsDigit) && contact.Length >= 3 && contact.Length <= 15)
                     {
-                        query = "INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('" + name + "','" + address + "','" + contact + "')";
-                        fn.setData(query, "Reservation Place Added Successfully");
+                        string query = $"INSERT INTO Add_Place (placeName, placeAddress, placeContact) VALUES ('{name}', '{address}', '{contact}')";
+
+                        DbFunction dbFunction = new DbFunction();
+                        dbFunction.setData(query, "Reservation Place Added Successfully");
 
                         RefreshPlaceListInCreateReservationForm();
 
@@ -71,14 +72,16 @@ namespace StaySmart.User_Control
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid numeric phone number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Error adding place: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
 
 
         public void RefreshPlaceListInCreateReservationForm()

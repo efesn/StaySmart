@@ -38,8 +38,8 @@ namespace StaySmart.User_Control
             {
                 if (!row.IsNewRow)
                 {
-                    string placeName = row.Cells["placeName"].Value.ToString();
-                    comboBoxPlaceName.Items.Add(placeName);
+                    string placeId = row.Cells[0].Value.ToString();
+                    comboBoxPlaceName.Items.Add(placeId);
                 }
             }
         }
@@ -47,15 +47,15 @@ namespace StaySmart.User_Control
 
         public void LoadPlaces()
         {
-
-            query = "SELECT placeName FROM Add_Place";
+            query = "SELECT placeId FROM Add_Place";
             SqlDataReader sdr = fn.getForCombo(query);
             while (sdr.Read())
             {
-                comboBoxPlaceName.Items.Add(sdr.GetString(0));
+                comboBoxPlaceName.Items.Add(sdr.GetInt32(0).ToString());
             }
             sdr.Close();
         }
+
 
         public void RefreshPlaces()
         {
@@ -77,56 +77,25 @@ namespace StaySmart.User_Control
         {
             if (comboBoxPlaceName.SelectedIndex != -1 && txtName.Text != "" && txtContact.Text != "" && txtEmail.Text != "" && genderCombobox.Text != "" && txtCheckin.Text != "")
             {
-                string placeName = comboBoxPlaceName.SelectedItem.ToString();
+                string placeId = comboBoxPlaceName.SelectedItem.ToString();
                 string customerName = txtName.Text;
                 string customerContact = txtContact.Text;
                 string customerGender = genderCombobox.Text;
                 string customerEmail = txtEmail.Text;
-                string checkIn = btnCheckin.Text;
-                string checkOut = btnCheckOut.Text;
+                string checkIn = btnCheckin.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                string checkOut = btnCheckOut.Value != null ? btnCheckOut.Value.ToString("yyyy-MM-dd HH:mm:ss") : "NULL";
                 string otp = OTPUtility.GenerateOTP();
 
-                // only numeric characters
-                if (customerContact.All(char.IsDigit))
+                int userId = CreateUserAndGetId(customerEmail, otp);
+
+                if (userId != -1)
                 {
-                    if (customerContact.Length >= 3 && customerContact.Length <= 15)
-                    {
-                        // is email valid?
-                        if (IsValidEmail(customerEmail))
-                        {
-                            query = "INSERT INTO New_Reservation (placeName, customerName, customerContact, customerEmail, gender, checkin, checkout, otp) VALUES ('" + placeName + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "','" + otp + "')";
-                            fn.setData(query, "Reservation Created Successfully");
-
-                            query = "INSERT INTO User_Table (User_Name, User_Password, UserRole, Email, OTP) VALUES ('" + customerEmail + "','" + otp + "','User','" + customerEmail + "','" + otp + "')";
-                            fn.setData(query, "User Created Successfully");
-
-                            OTPUtility otpUtility = new OTPUtility();
-                            otpUtility.SendOTPByEmail(customerEmail, otp);
-
-                            email.SendEmail(customerEmail, customerName, placeName, checkIn, checkOut);
-
-                            var parentForm = this.ParentForm as LoginForm;
-                            if (parentForm != null)
-                            {
-                                var viewReservationsControl = parentForm.Controls["uc_ViewReservations"] as UC_ViewReservations;
-                                viewReservationsControl.LoadReservationsData();
-                            }
-
-                            clearAll();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please enter a valid email address!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter a valid phone number between 3 and 15 digits!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    query = "INSERT INTO New_Reservation (User_ID, placeId, customerName, customerContact, customerEmail, gender, checkin, checkout, otp) VALUES (" + userId + ",'" + placeId + "','" + customerName + "','" + customerContact + "','" + customerEmail + "','" + customerGender + "','" + checkIn + "','" + checkOut + "','" + otp + "')";
+                    fn.setData(query, "Reservation Created Successfully");
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid numeric phone number!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Failed to create a new user!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
@@ -134,6 +103,35 @@ namespace StaySmart.User_Control
                 MessageBox.Show("Please fill all the fields!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private int CreateUserAndGetId(string email, string otp)
+        {
+            int userId = -1;
+            try
+            {
+                using (SqlConnection con = fn.getConnection())
+                {
+                    con.Open();
+                    string insertQuery = "INSERT INTO User_Table (User_Name, User_Password, UserRole, Email, OTP) VALUES (@UserName, @Password, @UserRole, @Email, @OTP); SELECT SCOPE_IDENTITY();";
+                    SqlCommand cmd = new SqlCommand(insertQuery, con);
+                    cmd.Parameters.AddWithValue("@UserName", email); 
+                    cmd.Parameters.AddWithValue("@Password", ""); 
+                    cmd.Parameters.AddWithValue("@UserRole", "User"); 
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@OTP", otp);
+                    userId = Convert.ToInt32(cmd.ExecuteScalar()); 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error creating user: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return userId;
+        }
+
+
+
+
 
         private bool IsValidEmail(string email)
         {

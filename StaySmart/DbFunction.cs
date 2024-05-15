@@ -10,7 +10,7 @@ namespace StaySmart
 {
     internal class DbFunction
     {
-        protected SqlConnection getConnection()
+        public SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "data source=DESKTOP-J3UGBQS; database=Reservation_Management_System; integrated security=True";
@@ -41,6 +41,7 @@ namespace StaySmart
 
             MessageBox.Show("'" + message + "'", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         public SqlDataReader getForCombo(String query)
         {
@@ -156,7 +157,7 @@ namespace StaySmart
             return count;
         }
 
-        public DataTable GetReportData(string query, string placeName)
+        public DataTable GetReportData(string query, string placeId)
         {
             DataTable reportData = new DataTable();
 
@@ -168,8 +169,8 @@ namespace StaySmart
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     // Add Place Name parameter if not null or empty
-                    if (!string.IsNullOrEmpty(placeName))
-                        cmd.Parameters.AddWithValue("@PlaceName", placeName);
+                    if (!string.IsNullOrEmpty(placeId))
+                        cmd.Parameters.AddWithValue("@PlaceId", placeId);
 
                     SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                     adapter.Fill(reportData);

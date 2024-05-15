@@ -35,17 +35,16 @@ namespace StaySmart.User_Control
             LoadReservationsData();
             comboBoxPlace.Items.Clear();
 
-            query = "SELECT placeName FROM Add_Place";
+            query = "SELECT placeId FROM Add_Place";
             SqlDataReader sdr = fn.getForCombo(query);
             while (sdr.Read())
             {
-                comboBoxPlace.Items.Add(sdr.GetString(0));
+                int placeId = sdr.GetInt32(0);
+
+                comboBoxPlace.Items.Add(placeId.ToString());
             }
             sdr.Close();
 
-            //LoadReservationsData(); 
-
-            // Set DataGridView columns headers
             DataGridViewReservations.Columns[0].HeaderText = "ID";
             DataGridViewReservations.Columns[1].HeaderText = "Name";
             DataGridViewReservations.Columns[2].HeaderText = "Email";
@@ -56,12 +55,14 @@ namespace StaySmart.User_Control
             DataGridViewReservations.Columns[7].HeaderText = "Check Out";
         }
 
+
+
         public void LoadReservationsData()
         {
 
             DataGridViewReservations.DataSource = null;
             //query = "SELECT * FROM New_Reservation";
-            query = "SELECT newReservationId, customerName, customerEmail, gender, placeName, customerContact, checkin, checkout FROM New_Reservation";
+            query = "SELECT newReservationId, customerName, customerEmail, gender, placeId, customerContact, checkin, checkout FROM New_Reservation";
             DataSet ds = fn.getData(query);
 
             DataGridViewReservations.DataSource = ds.Tables[0];
@@ -101,6 +102,7 @@ namespace StaySmart.User_Control
             }
         }
 
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (DataGridViewReservations.SelectedRows.Count > 0)
@@ -123,7 +125,7 @@ namespace StaySmart.User_Control
                         // Validate phone number
                         if (customerContact.All(char.IsDigit) && customerContact.Length >= 3 && customerContact.Length <= 15)
                         {
-                            string query = "UPDATE New_Reservation SET placeName = '" + placeName + "', customerName = '" + customerName + "', customerContact = '" + customerContact + "', customerEmail = '" + customerEmail + "', gender = '" + customerGender + "', checkin = '" + checkIn + "', checkout = '" + checkOut + "' WHERE newReservationId = " + reservationId;
+                            string query = "UPDATE New_Reservation SET placeId = '" + placeName + "', customerName = '" + customerName + "', customerContact = '" + customerContact + "', customerEmail = '" + customerEmail + "', gender = '" + customerGender + "', checkin = '" + checkIn + "', checkout = '" + checkOut + "' WHERE newReservationId = " + reservationId;
                             fn.setData(query, "Reservation Updated Successfully");
 
                             email.UpdateEmail(customerEmail, customerName, placeName, checkIn, checkOut);
@@ -211,7 +213,7 @@ namespace StaySmart.User_Control
         {
             string placeName = getReportCombobox.Text;
 
-            string query = "SELECT * FROM New_Reservation WHERE placeName = @PlaceName";
+            string query = "SELECT * FROM New_Reservation WHERE placeId = @PlaceName";
 
             DataTable reportData = fn.GetReportData(query, placeName);
 

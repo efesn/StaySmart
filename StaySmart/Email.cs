@@ -29,7 +29,7 @@ namespace StaySmart
             this.smtpPassword = config.GetSection("SMTP")?["Password"] ?? throw new ArgumentNullException(nameof(smtpPassword));
         }
 
-        public void SendEmail(string customerEmail, string customerName, string placeName, string checkIn, string checkOut)
+        public void SendEmail(string customerEmail, string customerName, string placeId, string checkIn, string checkOut)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace StaySmart
                 mail.From = new MailAddress(smtpUsername);
                 mail.To.Add(customerEmail);
                 mail.Subject = "Reservation Created";
-                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeName} is confirmed. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
+                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeId} is confirmed. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
 
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
                 smtpClient.EnableSsl = true;
@@ -56,7 +56,7 @@ namespace StaySmart
             }
         }
 
-        public void UpdateEmail(string customerEmail, string customerName, string placeName, string checkIn, string checkOut)
+        public void UpdateEmail(string customerEmail, string customerName, string placeId, string checkIn, string checkOut)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace StaySmart
                 mail.From = new MailAddress(smtpUsername);
                 mail.To.Add(customerEmail);
                 mail.Subject = "Reservation Updated";
-                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeName} is updated. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
+                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeId} is updated. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
 
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
                 smtpClient.EnableSsl = true;
@@ -83,7 +83,7 @@ namespace StaySmart
             }
         }
 
-        public void DeleteEmail(string customerEmail, string customerName, string placeName, string checkIn, string checkOut)
+        public void DeleteEmail(string customerEmail, string customerName, string placeId, string checkIn, string checkOut)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace StaySmart
                 mail.From = new MailAddress(smtpUsername);
                 mail.To.Add(customerEmail);
                 mail.Subject = "Reservation Deleted";
-                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeName} is deleted. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
+                mail.Body = $"Dear {customerName},\n\nYour reservation at {placeId} is deleted. \n\nDetails:\nCheck-in: {checkIn}\nCheck-out: {checkOut}\n\n";
 
                 smtpClient.Credentials = new NetworkCredential(smtpUsername, smtpPassword);
                 smtpClient.EnableSsl = true;
